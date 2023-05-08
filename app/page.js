@@ -1,95 +1,105 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+
+import {
+  Grid,
+  Container,
+  Segment,
+  Image,
+  Button,
+  Embed,
+  Accordion,
+  Reveal,
+  Header } from 'semantic-ui-react';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <Segment.Group>
+        <Segment inverted basic padded>
+          <Header size='large' inverted color='teal'>
+            Optimization, Automation, Transformation
+          </Header>
+        </Segment>
+        <Segment inverted vertical size='massive'>
+          <Grid stackable columns='equal' inverted padded>
+            <Grid.Row color='black' inverted stretched>
+              <Grid.Column>
+                <Grid.Row color='black' textAlign='left'>
+                  <Grid.Column>
+                    <Header size='huge' inverted color='yellow' className='home-header'>
+                      RevOps
+                    </Header>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row color='black' textAlign='left'>
+                  <Grid.Column>
+                    <Header size='huge' inverted color='yellow' className='home-header'>
+                      Customized For
+                    </Header>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row color='black' textAlign='left'>
+                  <Grid.Column>
+                    <Header size='huge' inverted color='yellow' className='home-header'>
+                      Your Company
+                    </Header>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid.Column>
+              <Grid.Column>
+                <Image fluid src='/assets/Images/Optomize.png' />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row color='black' inverted textAlign='center'>
+              <Grid.Column>
+                <Button
+                  as='a'
+                  href='/demo'
+                  inverted
+                  color='teal'
+                  size='huge'
+                >
+                  Getting Started
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+        <Segment inverted>
+          <Grid stackable columns='equal' verticalAlign='middle' inverted padded>
+            <Grid.Row color='black' textAlign='left'>
+              <Grid.Column>
+                <Reveal animated='rotate'>
+                  <Reveal.Content visible>
+                    <Image circular size='large' src='/assets/Images/Video_Design/BlueCloudHeading.png' />
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    <Image circular size='large' src='/assets/Images/Video_Design/BlueCloud2.png' />
+                  </Reveal.Content>
+                </Reveal>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' size='large' rounded />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+        <Segment inverted vertical>
+          <Grid statckable verticalAlign='middle' inverted padded>
+            <Grid.Row color='black' textAlign='center'>
+              <Grid.Column>
+                <Container>
+                  <Embed
+                    id='cxmrVD45aR4'
+                    placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-.png'
+                    source='youtube'
+                  />
+                </Container>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </Segment.Group>
     </main>
-  )
-}
+  );
+};
