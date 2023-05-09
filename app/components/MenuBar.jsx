@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
-import { Menu, Image, Container, Button, Reveal } from 'semantic-ui-react';
+import { Menu, Container, Image, Button, Reveal } from 'semantic-ui-react';
 
 export default class MenuBar extends Component {
   state = {};
@@ -18,7 +18,7 @@ export default class MenuBar extends Component {
         <Menu
           fixed={fixed ? 'top' : null}
           inverted
-          stackable
+          /*stackable='true'*/
           size='small'
           borderless
         >
@@ -27,14 +27,7 @@ export default class MenuBar extends Component {
               as='a'
               href='/'
             >
-              <Reveal animated='move'>
-                <Reveal.Content visible>
-                  <Image size='tiny' src='/assets/Logos/Logos_Full_Name/500x500_Logo_Square_Name_Blue_Background.png' />
-                </Reveal.Content>
-                <Reveal.Content hidden>
-                  <Image size='tiny' src='/assets/Logos/Logos/500x500_Square_Logo_Yellow_Background.png' />
-                </Reveal.Content>
-              </Reveal>
+              <Image size='small' alt='Alt logo' src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' />
             </Menu.Item>
             <Menu.Item
               as='a'

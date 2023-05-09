@@ -31,7 +31,7 @@ export default class Home extends Component {
     }
 
     const segmentStyle = {
-      backgroundImage: `url(${'/assets/Images/Lightning_Hi_Rez.jpeg'})`,
+      backgroundImage: `url(${'/assets/Images/Lightning_Strike-transformed.png'})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -96,10 +96,10 @@ export default class Home extends Component {
           </Segment>
           <Segment inverted padded style={ segmentStyle }>
             <Container>
-              <Grid stackable columns='equal' verticalAlign='middle' inverted padded>
+              <Grid /*stackable='true'*/ columns='equal' verticalAlign='middle' inverted padded>
                 <Grid.Row color='black' textAlign='left'>
                   <Grid.Column>
-                    <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' size='large' rounded />
+                    <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' alt='Consultation gif' size='large' rounded />
                     <Button icon='thumbs down outline' onClick={this.handleHide} />
                   </Grid.Column>
                   <Grid.Column>
@@ -111,7 +111,7 @@ export default class Home extends Component {
                             <Card.Meta></Card.Meta>
                             <Card.Description>...hold your business back!</Card.Description>
                           </Card.Content>
-                          <Card.Content description />
+                          <Card.Content />
                           <Card.Content extra></Card.Content>
                         </Card>
                       </Segment>
@@ -123,7 +123,7 @@ export default class Home extends Component {
                               <Card.Meta></Card.Meta>
                               <Card.Description>Take control of your revenue operations</Card.Description>
                             </Card.Content>
-                            <Card.Content description />
+                            <Card.Content />
                             <Card.Content extra></Card.Content>
                           </Card>
                           <p style={{ fontSize: '1.5em' }}>Partner with BizBolt today and take control of your revenue operations. Schedule a free consultation and learn how we can help your business reach its full potential!</p>
@@ -132,7 +132,7 @@ export default class Home extends Component {
                     </Dimmer.Dimmable>
                   </Grid.Column>
                   <Grid.Column>
-                    <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' size='large' rounded />
+                    <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
                     <Button icon='thumbs up outline' onClick={this.handleShow} />
                   </Grid.Column>
                 </Grid.Row>
@@ -141,7 +141,7 @@ export default class Home extends Component {
           </Segment>
           <Segment inverted vertical>
             <Container>
-              <Grid statckable verticalAlign='middle' inverted padded>
+              <Grid /*statckable='true'*/ verticalAlign='middle' inverted padded>
                 <Grid.Row color='black' textAlign='center'>
                   <Grid.Column>
                     <Container>
