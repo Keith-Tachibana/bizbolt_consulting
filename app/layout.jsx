@@ -2,6 +2,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './globals.css';
 import { Lato } from 'next/font/google';
 import MenuBar from './components/MenuBar';
+import Footer from './components/Footer';
 
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={lato.className}>
         <MenuBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
-import { Menu, Image, Button } from 'semantic-ui-react';
+import { Menu, Image, Container, Button, Reveal } from 'semantic-ui-react';
 
 export default class MenuBar extends Component {
   state = {};
@@ -17,13 +17,25 @@ export default class MenuBar extends Component {
       <InView onChange={this.toggleFixedMenu}>
         <Menu
           fixed={fixed ? 'top' : null}
-          stackable
           inverted
+          stackable
+          size='small'
+          borderless
         >
-          <Menu.Item header>
-            <Image size='mini' circular src='/assets/Logos/Logos/500x500_Square_Logo_Yellow_Background.png' />
-          </Menu.Item>
-          <Menu.Menu>
+          <Container text>
+            <Menu.Item
+              as='a'
+              href='/'
+            >
+              <Reveal animated='move'>
+                <Reveal.Content visible>
+                  <Image size='tiny' circular src='/assets/Logos/Logos_Full_Name/500x500_Logo_Square_Name_Blue_Background.png' />
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                  <Image size='tiny' circular src='/assets/Logos/Logos/500x500_Square_Logo_Yellow_Background.png' />
+                </Reveal.Content>
+              </Reveal>
+            </Menu.Item>
             <Menu.Item
               as='a'
               href='/'
@@ -60,9 +72,7 @@ export default class MenuBar extends Component {
             >
               Contact Us
             </Menu.Item>
-          </Menu.Menu>
-          <Menu.Menu position='right'>
-            <Menu.Item>
+            <Menu.Item position='right'>
               <Button
                 as='a'
                 href='/demo'
@@ -72,7 +82,7 @@ export default class MenuBar extends Component {
                 Free Consultation
               </Button>
             </Menu.Item>
-          </Menu.Menu>
+          </Container>
         </Menu>
       </InView>
     );
