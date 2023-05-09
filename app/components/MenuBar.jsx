@@ -29,10 +29,10 @@ export default class MenuBar extends Component {
             >
               <Reveal animated='move'>
                 <Reveal.Content visible>
-                  <Image size='tiny' circular src='/assets/Logos/Logos_Full_Name/500x500_Logo_Square_Name_Blue_Background.png' />
+                  <Image size='tiny' src='/assets/Logos/Logos_Full_Name/500x500_Logo_Square_Name_Blue_Background.png' />
                 </Reveal.Content>
                 <Reveal.Content hidden>
-                  <Image size='tiny' circular src='/assets/Logos/Logos/500x500_Square_Logo_Yellow_Background.png' />
+                  <Image size='tiny' src='/assets/Logos/Logos/500x500_Square_Logo_Yellow_Background.png' />
                 </Reveal.Content>
               </Reveal>
             </Menu.Item>
