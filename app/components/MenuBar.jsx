@@ -27,7 +27,7 @@ export default class MenuBar extends Component {
               as='a'
               href='/'
             >
-              <Image size='small' alt='Alt logo' src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' />
+              <Image size='tiny' alt='Alt logo' src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' />
             </Menu.Item>
             <Menu.Item
               as='a'

@@ -16,7 +16,7 @@ export default function Footer() {
             <Grid.Column width={4}>
               <p>&copy; {getYear} BizBolt Consulting</p>
             </Grid.Column>
-            <Grid.Column width={6}>
+            <Grid.Column textAlign='right' width={6}>
               <a href='https://www.instagram.com/bizbolt/' target='_blank'>
                 <Icon
                   link

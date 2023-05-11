@@ -40,7 +40,7 @@ export default class Home extends Component {
     return (
       <main>
         <Segment.Group>
-          <Segment inverted basic padded>
+          <Segment inverted padded>
             <Container>
               <Header size='large' inverted color='teal'>
                 <p style={{ padding: '1em' }}>Optimization, Automation, Transformation</p>
