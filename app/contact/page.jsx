@@ -10,7 +10,7 @@ export default class Contact extends Component {
     email: '',
     general: false,
     career: false,
-    partnership: false,
+    partnerships: false,
     submittedFirstName: '',
     submittedLastName: '',
     submittedEmail: '' }
@@ -40,6 +40,7 @@ export default class Contact extends Component {
                 <Form.Input
                   error={{ content: 'Please enter your first name', pointing: 'below' }}
                   fluid
+                  icon={{ name: 'address card', circular: true, link: true }}
                   required
                   type='text'
                   name='firstName'
@@ -52,6 +53,7 @@ export default class Contact extends Component {
                 <Form.Input
                   error='Please enter your last name'
                   fluid
+                  icon={{ name: 'address card outline', circular: true, link: true }}
                   required
                   type='text'
                   name='lastName'
@@ -65,6 +67,7 @@ export default class Contact extends Component {
                 <Form.Input
                   error='Please enter your company e-mail address'
                   fluid
+                  icon={{ name: 'mail', circular: true, link: true }}
                   required
                   type='email'
                   name='email'
@@ -82,6 +85,29 @@ export default class Contact extends Component {
                   checked={general}
                   onChange={this.handleChange}
                   label='General Questions'
+                />
+                <Form.Checkbox
+                  type='checkbox'
+                  name='career'
+                  checked={career}
+                  onChange={this.handleChange}
+                  label='Career Opportunities'
+                />
+                <Form.Checkbox
+                  type='checkbox'
+                  name='partnerships'
+                  checked={partnerships}
+                  onChange={this.handleChange}
+                  label='Partnerships'
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.TextArea
+
+                  required
+                  placeholder='Enter your comments here'
+                  rows={5}
+                  label='How can we help you?'
                 />
               </Form.Group>
             </Form>

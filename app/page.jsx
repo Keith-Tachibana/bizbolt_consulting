@@ -49,7 +49,7 @@ export default class Home extends Component {
           </Segment>
           <Segment inverted padded>
             <Container>
-              <Grid columns='equal' padded>
+              <Grid columns='equal' stackable padded>
                 <Grid.Row color='black' stretched>
                   <Grid.Column style={ asideStyle }>
                     <Grid.Row color='black' textAlign='left'>
@@ -96,7 +96,7 @@ export default class Home extends Component {
           </Segment>
           <Segment inverted padded style={ segmentStyle }>
             <Container>
-              <Grid /*stackable='true'*/ columns='equal' verticalAlign='middle' inverted padded>
+              <Grid stackable columns='equal' verticalAlign='middle' inverted padded>
                 <Grid.Row color='black' textAlign='left'>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' alt='Consultation gif' size='large' rounded />
@@ -141,7 +141,7 @@ export default class Home extends Component {
           </Segment>
           <Segment inverted vertical>
             <Container>
-              <Grid /*statckable='true'*/ verticalAlign='middle' inverted padded>
+              <Grid stackable verticalAlign='middle' inverted padded>
                 <Grid.Row color='black' textAlign='center'>
                   <Grid.Column>
                     <Container>

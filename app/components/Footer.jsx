@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <Segment inverted vertical>
       <Container textAlign='center'>
-        <Grid divided columns='equal' inverted /*stackable='true'*/ verticalAlign='middle'>
+        <Grid divided columns='equal' inverted stackable verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={6}>
               <Image src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' alt='Alt logo' size='small' />
