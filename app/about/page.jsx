@@ -1,6 +1,11 @@
 'use client';
 
-import { Header, Segment, Grid, Container } from 'semantic-ui-react';
+import {
+  Header,
+  Segment,
+  Grid,
+  Container
+} from 'semantic-ui-react';
 
 export default function About() {
   return (

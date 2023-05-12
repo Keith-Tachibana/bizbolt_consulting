@@ -1,6 +1,7 @@
 'use client';
 
 import React, { Component } from 'react';
+
 import {
   Grid,
   Container,
@@ -8,11 +9,10 @@ import {
   Image,
   Button,
   Embed,
+  Divider,
   Accordion,
-  Reveal,
-  Card,
-  Dimmer,
-  Header } from 'semantic-ui-react';
+  Header
+} from 'semantic-ui-react';
 
 export default class Home extends Component {
   state = {};
@@ -25,57 +25,85 @@ export default class Home extends Component {
 
     const asideStyle = {
       backgroundImage: `url(${'/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif'})`,
-      backgroundSize: 'cover',
+      backgroundSize: 'contain',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }
 
     const segmentStyle = {
-      backgroundImage: `url(${'/assets/Images/Lightning_Strike-transformed.png'})`,
+      backgroundImage: `url(${'/assets/Images/Blue_lightning_with_sparks.png'})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }
 
+    const panels = [
+      {
+        key: 'become-partner',
+        title: {
+          content: 'Who can help with my business operations?',
+          icon: 'question circle outline',
+        },
+        content: {
+          content: (
+            <span>
+              Partner with BizBolt today and take control of your revenue operations.
+            </span>
+          ),
+        },
+      },
+      {
+        key: 'first-step',
+        title: {
+          content: 'What is the first step I need to take?',
+          icon: 'question circle outline',
+        },
+        content: {
+          content: (
+            <span>
+              Schedule a free consultation and learn how we can help your business reach its full potential.
+            </span>
+          ),
+        },
+      },
+    ]
+
     return (
       <main>
         <Segment.Group>
-          <Segment inverted padded>
-            <Container>
+          <Segment inverted padded color='black'>
+            <Container textAlign='center'>
               <Header size='large' inverted color='teal'>
                 <p style={{ padding: '1em' }}>Optimization, Automation, Transformation</p>
               </Header>
             </Container>
           </Segment>
           <Segment inverted padded>
-            <Container>
+            <Container textAlign='center'>
               <Grid columns='equal' stackable padded>
-                <Grid.Row color='black' stretched>
-                  <Grid.Column style={ asideStyle }>
-                    <Grid.Row color='black' textAlign='left'>
+                <Grid.Row color='black' stretched style={ asideStyle }>
+                  <Grid.Column>
+                    <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.25em' }}>RevOps</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row color='black' textAlign='left'>
+                    <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.25em' }}>Customized For</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row color='black' textAlign='left'>
+                    <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.25em' }}>Your Company</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
-                  </Grid.Column>
-                  <Grid.Column>
-                    <Image fluid src='/assets/Images/Optomize.png' />
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row color='black' textAlign='center'>
@@ -94,48 +122,25 @@ export default class Home extends Component {
               </Grid>
             </Container>
           </Segment>
-          <Segment inverted padded style={ segmentStyle }>
+          <Segment padded inverted style={ segmentStyle }>
             <Container>
-              <Grid stackable columns='equal' verticalAlign='middle' inverted padded>
-                <Grid.Row color='black' textAlign='left'>
+              <Grid stackable columns='equal' inverted verticalAlign='middle' padded>
+                <Grid.Row textAlign='left'>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' alt='Consultation gif' size='large' rounded />
-                    <Button icon='thumbs down outline' onClick={this.handleHide} />
                   </Grid.Column>
-                  <Grid.Column>
-                    <Dimmer.Dimmable dimmed={active}>
-                      <Segment basic inverted>
-                        <Card>
-                          <Card.Content textAlign='center'>
-                            <Card.Header>Don't let inefficient processes...</Card.Header>
-                            <Card.Meta></Card.Meta>
-                            <Card.Description>...hold your business back!</Card.Description>
-                          </Card.Content>
-                          <Card.Content />
-                          <Card.Content extra></Card.Content>
-                        </Card>
-                      </Segment>
-                      <Dimmer active={active} onClickOutside={this.handleHide}>
-                        <Segment basic color='teal'>
-                          <Card>
-                            <Card.Content textAlign='center'>
-                              <Card.Header>Partner with BizBolt today!</Card.Header>
-                              <Card.Meta></Card.Meta>
-                              <Card.Description>Take control of your revenue operations</Card.Description>
-                            </Card.Content>
-                            <Card.Content />
-                            <Card.Content extra></Card.Content>
-                          </Card>
-                          <p style={{ fontSize: '1.5em' }}>Partner with BizBolt today and take control of your revenue operations. Schedule a free consultation and learn how we can help your business reach its full potential!</p>
-                        </Segment>
-                      </Dimmer>
-                    </Dimmer.Dimmable>
+                  <Grid.Column >
+                    <Accordion
+                      inverted
+                      defaultActiveIndex={0}
+                      panels={panels}
+                    />
                   </Grid.Column>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
-                    <Button icon='thumbs up outline' onClick={this.handleShow} />
                   </Grid.Column>
                 </Grid.Row>
+                <Divider horizontal inverted></Divider>
               </Grid>
             </Container>
           </Segment>

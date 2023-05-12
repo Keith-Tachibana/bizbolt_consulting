@@ -1,36 +1,54 @@
 'use client';
 
 import React, { Component } from 'react';
-import { Header, Container, Grid, Segment, Label, Form, Button } from 'semantic-ui-react';
+import { Formik } from 'formik';
+import * as Yup from 'Yup';
+
+import {
+  Header,
+  Container,
+  Grid,
+  Segment,
+  Label,
+  Modal
+} from 'semantic-ui-react';
+
+import {
+  Form,
+  Checkbox,
+  Input,
+  TextArea
+  SubmitButton,
+  ResetButton
+} from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    general: false,
-    career: false,
-    partnerships: false,
-    submittedFirstName: '',
-    submittedLastName: '',
-    submittedEmail: '' }
-
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit = () => {
-    const { firstName, lastName, email } = this.state;
-
-    this.setState({ submittedFirstName: firstName, submittedLastName: lastName, submittedEmail: email });
-    this.setState({ firstName: '', lastName: '', email: '' });
-  }
-
   render() {
+    const initialValues = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      checkbox1: '',
+      checkbox2: '',
+      checkbox3: '',
+      comments: '',
+      file: ''
+    };
+
+    const validationSchema = Yup.object({
+      firstName: Yup.string()
+        .max(20, "Must be 20 characters or less")
+        .required("Required"),
+      lastName: Yup.string()
+        .max(30, "Must be 30 characters or less")
+        .required("Required"),
+      email: Yup.string().email("Invalid email address").required("Required"),
+      gender: Yup.string().oneOf(["M", "F", "G"]).required(),
+      country: Yup.string()
+        .oneOf(countryOptions.map((c) => c.value))
+        .required()
+    });
+
     return (
       <Segment.Group >
         <Segment inverted padded>
