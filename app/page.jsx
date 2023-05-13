@@ -10,18 +10,26 @@ import {
   Button,
   Embed,
   Divider,
+  Rail,
+  Icon,
   Accordion,
   Header
 } from 'semantic-ui-react';
 
 export default class Home extends Component {
-  state = {};
+  state = { activeIndex: 0 };
 
   handleShow = () => this.setState({ active: true });
   handleHide = () => this.setState({ active: false });
+  handleClick = (event, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
+    this.setState({ activeIndex: newIndex });
+  };
 
   render() {
-    const { active } = this.state;
+    const { active, activeIndex } = this.state;
 
     const asideStyle = {
       backgroundImage: `url(${'/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif'})`,
@@ -31,42 +39,8 @@ export default class Home extends Component {
     }
 
     const segmentStyle = {
-      backgroundImage: `url(${'/assets/Images/Blue_lightning_with_sparks.png'})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      backgroundColor: '#000000'
     }
-
-    const panels = [
-      {
-        key: 'become-partner',
-        title: {
-          content: 'Who can help with my business operations?',
-          icon: 'question circle outline',
-        },
-        content: {
-          content: (
-            <span>
-              Partner with BizBolt today and take control of your revenue operations.
-            </span>
-          ),
-        },
-      },
-      {
-        key: 'first-step',
-        title: {
-          content: 'What is the first step I need to take?',
-          icon: 'question circle outline',
-        },
-        content: {
-          content: (
-            <span>
-              Schedule a free consultation and learn how we can help your business reach its full potential.
-            </span>
-          ),
-        },
-      },
-    ]
 
     return (
       <main>
@@ -81,26 +55,26 @@ export default class Home extends Component {
           <Segment inverted padded>
             <Container textAlign='center'>
               <Grid columns='equal' stackable padded>
-                <Grid.Row color='black' stretched style={ asideStyle }>
-                  <Grid.Column>
+                <Grid.Row color='black' stretched>
+                  <Grid.Column style={ asideStyle }>
                     <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.25em' }}>RevOps</p>
+                          <p style={{ fontSize: '2.5em' }}>RevOps</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.25em' }}>Customized For</p>
+                          <p style={{ fontSize: '2.5em' }}>Customized For</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row color='black'>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.25em' }}>Your Company</p>
+                          <p style={{ fontSize: '2.5em' }}>Your Company</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
@@ -125,16 +99,9 @@ export default class Home extends Component {
           <Segment padded inverted style={ segmentStyle }>
             <Container>
               <Grid stackable columns='equal' inverted verticalAlign='middle' padded>
-                <Grid.Row textAlign='left'>
+                <Grid.Row>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' alt='Consultation gif' size='large' rounded />
-                  </Grid.Column>
-                  <Grid.Column >
-                    <Accordion
-                      inverted
-                      defaultActiveIndex={0}
-                      panels={panels}
-                    />
                   </Grid.Column>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
@@ -156,6 +123,19 @@ export default class Home extends Component {
                         source='youtube'
                       />
                     </Container>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row color='black' textAlign='center'>
+                  <Grid.Column style={{ padding: '1em' }}>
+                    <Button
+                      as='a'
+                      href='/demo'
+                      inverted
+                      color='teal'
+                      size='huge'
+                    >
+                      Talk to an Expert
+                    </Button>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

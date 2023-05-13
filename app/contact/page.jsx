@@ -17,17 +17,47 @@ import {
   Form,
   Checkbox,
   Input,
-  TextArea
+  TextArea,
+  Select,
   SubmitButton,
   ResetButton
 } from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
+  handleSubmit  = () => {
+    console.log('Submitted');
+  };
+
+  handleChange = event => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
+    const countryOptions = [
+      { key: 'af', value: 'af', text: 'Afghanistan' },
+      { key: 'dz', value: 'dz', text: 'Algeria' },
+      { key: 'as', value: 'as', text: 'American Samoa' },
+      { key: 'ad', value: 'ad', text: 'Andorra' },
+      { key: 'ao', value: 'ao', text: 'Angola' },
+      { key: 'bd', value: 'bd', text: 'Bangladesh' },
+      { key: 'bb', value: 'bb', text: 'Barbados' },
+      { key: 'by', value: 'by', text: 'Belarus' },
+      { key: 'be', value: 'be', text: 'Belgium' },
+      { key: 'us', value: 'us', text: 'United States of America' }
+    ];
+
     const initialValues = {
       firstName: '',
       lastName: '',
       email: '',
+      gender: '',
+      country: '',
       checkbox1: '',
       checkbox2: '',
       checkbox3: '',
@@ -43,93 +73,51 @@ export default class Contact extends Component {
         .max(30, "Must be 30 characters or less")
         .required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      gender: Yup.string().oneOf(["M", "F", "G"]).required(),
+      gender: Yup.string().oneOf(['Male', 'Female', '']).required(),
       country: Yup.string()
-        .oneOf(countryOptions.map((c) => c.value))
+        .oneOf(countryOptions.map(country => country.value))
         .required()
     });
 
     return (
       <Segment.Group >
         <Segment inverted padded>
-          <Container>
-            <Form inverted onSubmit={this.handleSubmit}>
-              <Form.Group widths='equal'>
-                <Form.Input
-                  error={{ content: 'Please enter your first name', pointing: 'below' }}
-                  fluid
-                  icon={{ name: 'address card', circular: true, link: true }}
-                  required
-                  type='text'
-                  name='firstName'
-                  value={firstName}
-                  onChange={this.handleChange}
-                  label='First name'
-                  placeholder='First name'
-                  id='form-input-first-name'
-                />
-                <Form.Input
-                  error='Please enter your last name'
-                  fluid
-                  icon={{ name: 'address card outline', circular: true, link: true }}
-                  required
-                  type='text'
-                  name='lastName'
-                  value={lastName}
-                  onChange={this.handleChange}
-                  label='Last name'
-                  placeholder='Last name'
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Input
-                  error='Please enter your company e-mail address'
-                  fluid
-                  icon={{ name: 'mail', circular: true, link: true }}
-                  required
-                  type='email'
-                  name='email'
-                  value={email}
-                  onChange={this.handleChange}
-                  label='Company e-mail address'
-                  placeholder='Company e-mail address'
-                />
-              </Form.Group>
-              <Form.Group>
-                <Label><p>Which topic do you have questions about?</p></Label>
-                <Form.Checkbox
-                  type='checkbox'
-                  name='general'
-                  checked={general}
-                  onChange={this.handleChange}
-                  label='General Questions'
-                />
-                <Form.Checkbox
-                  type='checkbox'
-                  name='career'
-                  checked={career}
-                  onChange={this.handleChange}
-                  label='Career Opportunities'
-                />
-                <Form.Checkbox
-                  type='checkbox'
-                  name='partnerships'
-                  checked={partnerships}
-                  onChange={this.handleChange}
-                  label='Partnerships'
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.TextArea
+          <Formik
+            initialValues={ initialValues }
+            validationSchema={ validationSchema }
+            onSubmit={this.handleSubmit}
+          >
+            <Form inverted size='large'>
+              <Input
+                type='text'
+                name='firstName'
+                placeholder='First name'
+                label='First Name:'
+                inverted
+                fluid
+                errorPrompt
+              />
+              <Input
+                type='text'
+                name='lastName'
+                placeholder='Last name'
+                label='Last Name:'
+                inverted
+                fluid
+                errorPrompt
+              />
+              <Input
+                type='email'
+                name='email'
+                placeholder='Ex. my@email.com'
+                label='E-mail Address:'
+                inverted
+                fluid
+                errorPrompt
+              />
 
-                  required
-                  placeholder='Enter your comments here'
-                  rows={5}
-                  label='How can we help you?'
-                />
-              </Form.Group>
             </Form>
-          </Container>
+          </Formik>
         </Segment>
       </Segment.Group>
     );

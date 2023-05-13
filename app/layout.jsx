@@ -1,10 +1,10 @@
 import 'semantic-ui-css/semantic.min.css';
 import './globals.css';
-import { Lato } from 'next/font/google';
+import { Khand } from 'next/font/google';
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
 
-const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] });
+const khand = Khand({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata = {
   title: 'BizBolt Consulting',
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lato.className}>
+      <body className={khand.className}>
         <MenuBar />
         {children}
         <Footer />
