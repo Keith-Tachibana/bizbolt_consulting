@@ -79,45 +79,64 @@ export default class Contact extends Component {
         .required()
     });
 
+    const segmentStyle = {
+      backgroundColor: '#000000'
+    };
+
     return (
       <Segment.Group >
         <Segment inverted padded>
-          <Formik
-            initialValues={ initialValues }
-            validationSchema={ validationSchema }
-            onSubmit={this.handleSubmit}
-          >
-            <Form inverted size='large'>
-              <Input
-                type='text'
-                name='firstName'
-                placeholder='First name'
-                label='First Name:'
-                inverted
-                fluid
-                errorPrompt
-              />
-              <Input
-                type='text'
-                name='lastName'
-                placeholder='Last name'
-                label='Last Name:'
-                inverted
-                fluid
-                errorPrompt
-              />
-              <Input
-                type='email'
-                name='email'
-                placeholder='Ex. my@email.com'
-                label='E-mail Address:'
-                inverted
-                fluid
-                errorPrompt
-              />
+          <Container>
+            <Header as='h1' inverted textAlign='center' style={{ backgroundColor: '#000000' }}>
+              <p>Send us a message with the form below</p>
+            </Header>
+            <Formik
+              initialValues={ initialValues }
+              validationSchema={ validationSchema }
+              onSubmit={this.handleSubmit}
+            >
+              <Form inverted size='large'>
+                <Input
+                  type='text'
+                  name='firstName'
+                  placeholder='First name'
+                  label='First Name:'
+                  icon='user'
+                  iconPosition='left'
+                  inverted
+                  errorPrompt
+                />
+                <Input
+                  type='text'
+                  name='lastName'
+                  placeholder='Last name'
+                  label='Last Name:'
+                  icon='users'
+                  iconPosition='left'
+                  inverted
+                  errorPrompt
+                />
+                <Input
+                  type='email'
+                  name='email'
+                  placeholder='Ex. my@email.com'
+                  label='E-mail Address:'
+                  icon='mail'
+                  iconPosition='left'
+                  inverted
+                  errorPrompt
+                />
+                <Input
+                  type='file'
+                  name='file'
+                  label='Upload'
+                  inverted
+                />
 
-            </Form>
-          </Formik>
+
+              </Form>
+            </Formik>
+          </Container>
         </Segment>
       </Segment.Group>
     );

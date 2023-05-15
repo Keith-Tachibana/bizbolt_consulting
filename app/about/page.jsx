@@ -8,17 +8,27 @@ import {
 } from 'semantic-ui-react';
 
 export default function About() {
+
+  const segmentStyle = {
+    backgroundColor: '#000000'
+  };
+
+  const aboutStyle = {
+    backgroundColor: '#000000',
+    fontSize: '1.25em'
+  };
+
   return (
     <Segment.Group>
-      <Segment inverted padded>
+      <Segment inverted padded style={ segmentStyle }>
         <Container>
           <Grid>
             <Grid.Row stretched>
               <Grid.Column>
-                <Header as='h2' inverted color='teal' attached='top'>
+                <Header as='h2' inverted color='teal' attached='top' style={ segmentStyle }>
                   <b>BizBolt Overview</b>
                 </Header>
-                <Segment attached inverted raised style={{ fontSize: '1.25em' }}>
+                <Segment attached inverted style={ aboutStyle }>
                   <p>Welcome to BizBolt, a leading revenue operations consultancy that drives growth and maximizes revenue for businesses. Our expert consultants employ a data-driven approach to enhance
                     sales, marketing, and customer success operations, delivering measurable results for clients.
                   </p>
@@ -33,10 +43,10 @@ export default function About() {
             </Grid.Row>
             <Grid.Row stretched>
               <Grid.Column>
-                <Header as='h2' inverted color='yellow' attached='top'>
+                <Header as='h2' inverted color='yellow' attached='top' style={ segmentStyle }>
                   <b>Our Mission</b>
                 </Header>
-                <Segment attached inverted raised style={{ fontSize: '1.25em' }}>
+                <Segment attached inverted style={ aboutStyle }>
                   <p>BizBolt was founded with the belief that exceptional revenue operations consultants should strive to work themselves out of a job by implementing automation and data-driven solutions.
                     However, these solutions often require ongoing updates and modifications, which is where our consultancy comes in. Our team offers expertise to a variety of businesses, ensuring their
                     revenue operations remain optimized and efficient.

@@ -11,13 +11,23 @@ import {
 export default function Footer() {
   const getYear = new Date().getFullYear();
 
+  const segmentStyle = {
+    backgroundColor: '#000000'
+  };
+
   return (
-    <Segment inverted vertical>
+    <Segment inverted vertical style={ segmentStyle }>
       <Container textAlign='center'>
         <Grid columns='equal' inverted stackable>
           <Grid.Row>
             <Grid.Column>
-              <Image centered src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' alt='Alt logo' size='small' />
+              <Image
+                centered
+                as='a'
+                href='/'
+                src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png'
+                alt='Alt logo'
+                size='small' />
             </Grid.Column>
             <Grid.Column textAlign='center' verticalAlign='middle'>
               <p>&copy; {getYear} BizBolt Consulting</p>

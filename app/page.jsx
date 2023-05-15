@@ -36,42 +36,42 @@ export default class Home extends Component {
       backgroundSize: 'contain',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
-    }
+    };
 
     const segmentStyle = {
       backgroundColor: '#000000'
-    }
+    };
 
     return (
       <main>
         <Segment.Group>
-          <Segment inverted padded color='black'>
+          <Segment inverted padded style={ segmentStyle }>
             <Container textAlign='center'>
-              <Header size='large' inverted color='teal'>
-                <p style={{ padding: '1em' }}>Optimization, Automation, Transformation</p>
+              <Header size='large' inverted>
+                <p className='typed-items' style={{ padding: '1em' }}></p>
               </Header>
             </Container>
           </Segment>
-          <Segment inverted padded>
+          <Segment inverted padded style={ segmentStyle }>
             <Container textAlign='center'>
               <Grid columns='equal' stackable padded>
-                <Grid.Row color='black' stretched>
+                <Grid.Row stretched>
                   <Grid.Column style={ asideStyle }>
-                    <Grid.Row color='black'>
+                    <Grid.Row>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.5em' }}>RevOps</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row color='black'>
+                    <Grid.Row>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.5em' }}>Customized For</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row color='black'>
+                    <Grid.Row>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
                           <p style={{ fontSize: '2.5em' }}>Your Company</p>
@@ -80,7 +80,7 @@ export default class Home extends Component {
                     </Grid.Row>
                   </Grid.Column>
                 </Grid.Row>
-                <Grid.Row color='black' textAlign='center'>
+                <Grid.Row textAlign='center'>
                   <Grid.Column style={{ padding: '1em' }}>
                     <Button
                       as='a'
@@ -111,21 +111,21 @@ export default class Home extends Component {
               </Grid>
             </Container>
           </Segment>
-          <Segment inverted vertical>
+          <Segment inverted vertical style={ segmentStyle }>
             <Container>
               <Grid stackable verticalAlign='middle' inverted padded>
-                <Grid.Row color='black' textAlign='center'>
+                <Grid.Row textAlign='center'>
                   <Grid.Column>
                     <Container>
                       <Embed
                         id='cxmrVD45aR4'
-                        placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-.png'
+                        placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-black.png'
                         source='youtube'
                       />
                     </Container>
                   </Grid.Column>
                 </Grid.Row>
-                <Grid.Row color='black' textAlign='center'>
+                <Grid.Row textAlign='center'>
                   <Grid.Column style={{ padding: '1em' }}>
                     <Button
                       as='a'
@@ -142,6 +142,7 @@ export default class Home extends Component {
             </Container>
           </Segment>
         </Segment.Group>
+        <script src='/main.js' async></script>
       </main>
     );
   }
