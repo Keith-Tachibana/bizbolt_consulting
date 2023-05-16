@@ -10,7 +10,7 @@ import {
   Grid,
   Segment,
   Label,
-  Modal
+  Table
 } from 'semantic-ui-react';
 
 import {
@@ -73,7 +73,7 @@ export default class Contact extends Component {
         .max(30, "Must be 30 characters or less")
         .required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      gender: Yup.string().oneOf(['Male', 'Female', '']).required(),
+      gender: Yup.string().oneOf(['Male', 'Female', 'Other']).required(),
       country: Yup.string()
         .oneOf(countryOptions.map(country => country.value))
         .required()
@@ -85,58 +85,99 @@ export default class Contact extends Component {
 
     return (
       <Segment.Group >
-        <Segment inverted padded>
-          <Container>
-            <Header as='h1' inverted textAlign='center' style={{ backgroundColor: '#000000' }}>
-              <p>Send us a message with the form below</p>
-            </Header>
-            <Formik
-              initialValues={ initialValues }
-              validationSchema={ validationSchema }
-              onSubmit={this.handleSubmit}
-            >
-              <Form inverted size='large'>
-                <Input
-                  type='text'
-                  name='firstName'
-                  placeholder='First name'
-                  label='First Name:'
-                  icon='user'
-                  iconPosition='left'
-                  inverted
-                  errorPrompt
-                />
-                <Input
-                  type='text'
-                  name='lastName'
-                  placeholder='Last name'
-                  label='Last Name:'
-                  icon='users'
-                  iconPosition='left'
-                  inverted
-                  errorPrompt
-                />
-                <Input
-                  type='email'
-                  name='email'
-                  placeholder='Ex. my@email.com'
-                  label='E-mail Address:'
-                  icon='mail'
-                  iconPosition='left'
-                  inverted
-                  errorPrompt
-                />
-                <Input
-                  type='file'
-                  name='file'
-                  label='Upload'
-                  inverted
-                />
+        <Segment inverted padded style={ segmentStyle }>
+          <Grid container centered columns={2}>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as='h1' inverted textAlign='center' style={ segmentStyle }>
+                  <p>Send us a message with the form below</p>
+                </Header>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <Formik
+                  initialValues={ initialValues }
+                  validationSchema={ validationSchema }
+                  onSubmit={this.handleSubmit}
+                >
+                  <Form inverted size='large'>
+                    <Input
+                      type='text'
+                      name='firstName'
+                      placeholder='First name'
+                      label='First Name:'
+                      icon='user'
+                      iconPosition='left'
+                      inverted
+                      errorPrompt
+                    />
+                    <Input
+                      type='text'
+                      name='lastName'
+                      placeholder='Last name'
+                      label='Last Name:'
+                      icon='users'
+                      iconPosition='left'
+                      inverted
+                      errorPrompt
+                    />
+                    <Input
+                      type='email'
+                      name='email'
+                      placeholder='Ex. my@email.com'
+                      label='E-mail Address:'
+                      icon='mail'
+                      iconPosition='left'
+                      inverted
+                      errorPrompt
+                    />
+                    <Input
+                      type='file'
+                      name='file'
+                      label='Upload'
+                      inverted
+                    />
 
 
-              </Form>
-            </Formik>
-          </Container>
+                  </Form>
+                </Formik>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                  <Table inverted celled style={ segmentStyle }>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.HeaderCell colSpan='2' textAlign='center' className='paragraph-text'>Contact Info</Table.HeaderCell>
+                      </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                      <Table.Row>
+                        <Table.HeaderCell className='paragraph-text'>Company:</Table.HeaderCell>
+                        <Table.Cell className='paragraph-text'>BizBolt LLC</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.HeaderCell className='paragraph-text'>Email:</Table.HeaderCell>
+                        <Table.Cell className='paragraph-text'>Info@bizbolt.com</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.HeaderCell className='paragraph-text'>Phone:</Table.HeaderCell>
+                        <Table.Cell className='paragraph-text'>+1 (949) 214-4661</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.HeaderCell className='paragraph-text'>Address:</Table.HeaderCell>
+                        <Table.Cell className='paragraph-text'>668 N. Coast Hwy., Apt. 1329, Laguna Beach, CA 92651</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell />
+                        <Table.Cell></Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Segment>
       </Segment.Group>
     );

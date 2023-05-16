@@ -1,6 +1,8 @@
 'use client';
 
 import React, { Component } from 'react';
+import Typed from 'typed.js';
+import words from './words';
 
 import {
   Grid,
@@ -28,15 +30,23 @@ export default class Home extends Component {
     this.setState({ activeIndex: newIndex });
   };
 
+  componentDidMount() {
+    const options = {
+      strings: words,
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
+      cursorChar: '|'
+    };
+    this.typed = new Typed(this.el, options);
+  };
+
+  componentWillUnmount() {
+    this.typed.destroy();
+  };
+
   render() {
     const { active, activeIndex } = this.state;
-
-    const asideStyle = {
-      backgroundImage: `url(${'/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif'})`,
-      backgroundSize: 'contain',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    };
 
     const segmentStyle = {
       backgroundColor: '#000000'
@@ -48,7 +58,12 @@ export default class Home extends Component {
           <Segment inverted padded style={ segmentStyle }>
             <Container textAlign='center'>
               <Header size='large' inverted>
-                <p className='typed-items' style={{ padding: '1em' }}></p>
+                <span
+                  ref={(el) => {
+                    this.el = el;
+                  }}
+                  style={{ whiteSpace: 'pre' }}
+                />
               </Header>
             </Container>
           </Segment>
@@ -56,7 +71,7 @@ export default class Home extends Component {
             <Container textAlign='center'>
               <Grid columns='equal' stackable padded>
                 <Grid.Row stretched>
-                  <Grid.Column style={ asideStyle }>
+                  <Grid.Column>
                     <Grid.Row>
                       <Grid.Column>
                         <Header size='huge' inverted color='yellow'>
@@ -101,7 +116,7 @@ export default class Home extends Component {
               <Grid stackable columns='equal' inverted verticalAlign='middle' padded>
                 <Grid.Row>
                   <Grid.Column>
-                    <Image src='/assets/Icons/Gifs/981-consultation-outline.gif' alt='Consultation gif' size='large' rounded />
+
                   </Grid.Column>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
@@ -142,7 +157,6 @@ export default class Home extends Component {
             </Container>
           </Segment>
         </Segment.Group>
-        <script src='/main.js' async></script>
       </main>
     );
   }

@@ -30,7 +30,7 @@ export default function Footer() {
                 size='small' />
             </Grid.Column>
             <Grid.Column textAlign='center' verticalAlign='middle'>
-              <p>&copy; {getYear} BizBolt Consulting</p>
+              <p className='paragraph-text'>&copy; {getYear} BizBolt Consulting</p>
             </Grid.Column>
             <Grid.Column >
               <a href='https://www.instagram.com/bizbolt/' target='_blank'>

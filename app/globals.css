@@ -6,8 +6,11 @@
 
 html,
 body {
-  font-weight: 700;
   background-color: #000000;
+}
+
+.paragraph-text {
+  font-size: 1.25em;
 }
 
 @media screen and (max-width: 1408px) {
