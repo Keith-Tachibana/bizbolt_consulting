@@ -19,11 +19,25 @@ import {
   Input,
   TextArea,
   Select,
+  Radio,
   SubmitButton,
   ResetButton
 } from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    gender: '',
+    country: '',
+    checkbox1: '',
+    checkbox2: '',
+    checkbox3: '',
+    comments: '',
+    file: ''
+  };
+
   handleSubmit  = () => {
     console.log('Submitted');
   };
@@ -39,6 +53,8 @@ export default class Contact extends Component {
   };
 
   render() {
+    const { gender } = this.state;
+
     const countryOptions = [
       { key: 'af', value: 'af', text: 'Afghanistan' },
       { key: 'dz', value: 'dz', text: 'Algeria' },
@@ -122,6 +138,42 @@ export default class Contact extends Component {
                       inverted
                       errorPrompt
                     />
+                    <Label>Gender</Label>
+                    <span>
+                      <Radio
+                        type='radio'
+                        name='male'
+                        value='male'
+                        label='Male'
+                        icon='male'
+                        iconPosition='left'
+                        errorPrompt
+                        checked={gender === 'male'}
+                        onChange={this.handleChange}
+                      />
+                      <Radio
+                        type='radio'
+                        name='female'
+                        value='female'
+                        label='Female'
+                        icon='female'
+                        iconPosition='left'
+                        errorPrompt
+                        checked={gender === 'female'}
+                        onChange={this.handleChange}
+                      />
+                      <Radio
+                        type='radio'
+                        name='other'
+                        value='other'
+                        label='Other'
+                        icon='transgender alternate'
+                        iconPosition='left'
+                        errorPrompt
+                        checked={gender === 'other'}
+                        onChange={this.handleChange}
+                      />
+                    </span>
                     <Input
                       type='email'
                       name='email'
