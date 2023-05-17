@@ -1,10 +1,13 @@
 import 'semantic-ui-css/semantic.min.css';
 import './globals.css';
-import { Khand } from 'next/font/google';
+import { Khand, Oswald, Kaisei_Tokumin, Bitter } from 'next/font/google';
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
 
 const khand = Khand({ subsets: ['latin'], weight: ['400', '700'] });
+const oswald = Oswald({ subsets: ['latin'], weight: ['400', '700'] });
+const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: ['400', '700'] });
+const bitter = Bitter({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata = {
   title: 'BizBolt Consulting',

@@ -9,6 +9,11 @@ body {
   background-color: #000000;
 }
 
+.header {
+  font-family: 'Oswald' !important;
+  font-size: '2em' !important                                                                                                                                                                                                                                                           ;
+}
+
 .paragraph-text {
   font-size: 1.25em;
 }

@@ -10,6 +10,8 @@ import {
   Grid,
   Segment,
   Label,
+  FormField,
+  FormGroup,
   Table
 } from 'semantic-ui-react';
 
@@ -49,6 +51,25 @@ export default class Contact extends Component {
 
     this.setState({
       [name]: value
+    });
+  };
+
+  handleRadio = event => {
+    this.setState({
+      gender: event.target.value
+    });
+  };
+
+  handleFile = event => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    file['uploadId'] = event.target.id;
+
+    console.log(file);
+
+    const files = this.state.file;
+    this.setState({
+      file: [...files, file]
     });
   };
 
@@ -99,6 +120,13 @@ export default class Contact extends Component {
       backgroundColor: '#000000'
     };
 
+    const labelStyle = {
+      backgroundColor: '#000000',
+      color: '#FFFFFF',
+      fontSize: '1em',
+      padding: '0'
+    };
+
     return (
       <Segment.Group >
         <Segment inverted padded style={ segmentStyle }>
@@ -125,6 +153,7 @@ export default class Contact extends Component {
                       label='First Name:'
                       icon='user'
                       iconPosition='left'
+                      value={Formik.v}
                       inverted
                       errorPrompt
                     />
@@ -138,46 +167,34 @@ export default class Contact extends Component {
                       inverted
                       errorPrompt
                     />
-                    <Label>Gender</Label>
-                    <span>
-                      <Radio
-                        type='radio'
-                        name='male'
-                        value='male'
-                        label='Male'
-                        icon='male'
-                        iconPosition='left'
-                        errorPrompt
-                        checked={gender === 'male'}
-                        onChange={this.handleChange}
-                      />
-                      <Radio
-                        type='radio'
-                        name='female'
-                        value='female'
-                        label='Female'
-                        icon='female'
-                        iconPosition='left'
-                        errorPrompt
-                        checked={gender === 'female'}
-                        onChange={this.handleChange}
-                      />
-                      <Radio
-                        type='radio'
-                        name='other'
-                        value='other'
-                        label='Other'
-                        icon='transgender alternate'
-                        iconPosition='left'
-                        errorPrompt
-                        checked={gender === 'other'}
-                        onChange={this.handleChange}
-                      />
-                    </span>
+                    <FormField>
+                      <Label style={ labelStyle }>Gender:</Label>
+                      <FormGroup inline>
+                        <Radio
+                          type='radio'
+                          name='gender'
+                          value='male'
+                          label='Male'
+                        />
+                        <Radio
+                          type='radio'
+                          name='gender'
+                          value='female'
+                          label='Female'
+                        />
+                        <Radio
+                          type='radio'
+                          name='gender'
+                          value='other'
+                          label='Other'
+                          errorPrompt
+                        />
+                      </FormGroup>
+                    </FormField>
                     <Input
                       type='email'
                       name='email'
-                      placeholder='Ex. my@email.com'
+                      placeholder='john@example.com'
                       label='E-mail Address:'
                       icon='mail'
                       iconPosition='left'
@@ -187,10 +204,8 @@ export default class Contact extends Component {
                     <Input
                       type='file'
                       name='file'
-                      label='Upload'
-                      inverted
+                      label='Upload:'
                     />
-
 
                   </Form>
                 </Formik>
