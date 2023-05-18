@@ -105,49 +105,55 @@ const level2dPanels = [
 ];
 
 const level1Content = (
-  <Header>
-    <Icon name='dropdown' />
+  <Header inverted>
     <Image circular src='/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif' />
     Data Services / CRM
-    <Accordion.Accordion panels={level1Panels} />
+    <Accordion.Accordion panels={level1Panels} inverted />
   </Header>
 );
 
 const level2Content = (
-  <Header>
-    <Icon name='dropdown' />
+  <Header inverted>
     <Image circular src='/assets/Icons/Gifs/970-video-conference-outline copy.gif' />
     Revenue Teams
-    <Accordion.Accordion panels={level2Panels} />
+    <Accordion.Accordion panels={level2Panels} inverted />
+    <Accordion.Accordion panels={level2bPanels} inverted />
+    <Accordion.Accordion panels={level2cPanels} inverted />
+    <Accordion.Accordion panels={level2dPanels} inverted />
   </Header>
 );
 
 const level2bContent = (
-  <Header>
-    <Icon name='dropdown' />
+  <Header inverted>
+    <Icon name='chevron circle down' />
     <Image circular src='/assets/Icons/SVGs/undraw_financial_data_re_p0fl.svg' />
     Sales Teams
-    <Accordion.Accordion panels={level2bPanels} />
+    <Accordion.Accordion panels={level2bPanels} inverted />
   </Header>
 );
 
 const level2cContent = (
-  <Header>
-    <Icon name='dropdown' />
+  <Header inverted>
+    <Icon name='chevron circle down' />
     <Image circular src='/assets/Icons/SVGs/undraw_marketing_re_7f1g.svg' />
     Marketing Teams
-    <Accordion.Accordion panels={level2cPanels} />
+    <Accordion.Accordion panels={level2cPanels} inverted />
   </Header>
 );
 
 const level2dContent = (
-  <Header>
-    <Icon name='dropdown' />
+  <Header inverted>
+    <Icon name='chevron circle down' />
     <Image circular src='/assets/Icons/SVGs/undraw_ideas_flow_re_bmea.svg' />
     Customer Success Teams
-    <Accordion.Accordion panels={level2dPanels} />
+    <Accordion.Accordion panels={level2dPanels} inverted />
   </Header>
 );
+
+const rootPanels = [
+  { key: 'panel-1', title: 'Data Services', content: { content: level1Content } },
+  { key: 'panel-2', title: 'Revenue Teams', content: { content: level2Content } }
+];
 
 export default class Services extends Component {
   render() {
@@ -202,13 +208,8 @@ export default class Services extends Component {
           </Container>
         </Segment>
         <Segment inverted padded style={ segmentStyle }>
-          <Container textAlign='left'>
-            <Header as='h2' inverted>
-              <Image size='large' src='/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif' />
-              Data Services / CRM
-            </Header>
-            <level1Content />
-            <level2Content />
+          <Container textAlign='center'>
+            <Accordion defaultActiveIndex={0} panels={rootPanels} inverted />
           </Container>
         </Segment>
       </Segment.Group>

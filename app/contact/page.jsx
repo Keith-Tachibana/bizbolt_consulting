@@ -33,9 +33,7 @@ export default class Contact extends Component {
     email: '',
     gender: '',
     country: '',
-    checkbox1: '',
-    checkbox2: '',
-    checkbox3: '',
+    question: '',
     comments: '',
     file: ''
   };
@@ -95,25 +93,17 @@ export default class Contact extends Component {
       email: '',
       gender: '',
       country: '',
-      checkbox1: '',
-      checkbox2: '',
-      checkbox3: '',
+      question: '',
       comments: '',
       file: ''
     };
 
     const validationSchema = Yup.object({
-      firstName: Yup.string()
-        .max(20, "Must be 20 characters or less")
-        .required("Required"),
-      lastName: Yup.string()
-        .max(30, "Must be 30 characters or less")
-        .required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      gender: Yup.string().oneOf(['Male', 'Female', 'Other']).required(),
-      country: Yup.string()
-        .oneOf(countryOptions.map(country => country.value))
-        .required()
+      firstName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
+      lastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      gender: Yup.string().oneOf(['Male', 'Female', 'Other']).required('Required'),
+      country: Yup.string().oneOf(countryOptions.map(country => country.value)).required('Required')
     });
 
     const segmentStyle = {
@@ -168,7 +158,7 @@ export default class Contact extends Component {
                       errorPrompt
                     />
                     <FormField>
-                      <Label style={ labelStyle }>Gender:</Label>
+                      <Label htmlFor='gender' style={ labelStyle }>Gender:</Label>
                       <FormGroup inline>
                         <Radio
                           type='radio'
@@ -201,12 +191,51 @@ export default class Contact extends Component {
                       inverted
                       errorPrompt
                     />
+                    <Label htmlFor='country' style={ labelStyle }>Select your country of origin:</Label>
+                    <Select
+                      name='country'
+                      clearable
+                      inverted
+                      placeholder='Select your country'
+                      options={countryOptions}
+                      errorPrompt
+                    />
+                    <FormField>
+                      <Label htmlFor='question' style={ labelStyle }>What is your question about?</Label>
+                      <FormGroup>
+                        <Radio
+                          type='radio'
+                          name='question'
+                          value='generalQuestions'
+                          label='General questions'
+                        />
+                        <Radio
+                          type='radio'
+                          name='question'
+                          value='careerOpportunities'
+                          label='Career opportunities'
+                        />
+                        <Radio
+                          type='radio'
+                          name='question'
+                          value='partnerships'
+                          label='Partnerships'
+                          errorPrompt
+                        />
+                      </FormGroup>
+                    </FormField>
+                    <Label htmlFor='comments' style={ labelStyle }>Comments:</Label>
+                    <TextArea
+                      name='comments'
+                      placeholder='How can we help you?'
+                      style={{ minHeight: '100' }}
+                    />
+                    <Label htmlFor='file'>Upload Attachments:</Label>
                     <Input
                       type='file'
                       name='file'
                       label='Upload:'
                     />
-
                   </Form>
                 </Formik>
               </Grid.Column>
