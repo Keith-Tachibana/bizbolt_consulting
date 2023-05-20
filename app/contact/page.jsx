@@ -230,11 +230,10 @@ export default class Contact extends Component {
                       placeholder='How can we help you?'
                       style={{ minHeight: '100' }}
                     />
-                    <Label htmlFor='file'>Upload Attachments:</Label>
                     <Input
                       type='file'
                       name='file'
-                      label='Upload:'
+                      label='Upload attachments:'
                     />
                   </Form>
                 </Formik>
@@ -245,25 +244,25 @@ export default class Contact extends Component {
                   <Table inverted celled style={ segmentStyle }>
                     <Table.Header>
                       <Table.Row>
-                        <Table.HeaderCell colSpan='2' textAlign='center' className='paragraph-text'>Contact Info</Table.HeaderCell>
+                        <Table.HeaderCell colSpan='2' textAlign='center' className='contacts-header'>Contact Info</Table.HeaderCell>
                       </Table.Row>
                     </Table.Header>
                     <Table.Body>
                       <Table.Row>
-                        <Table.HeaderCell className='paragraph-text'>Company:</Table.HeaderCell>
-                        <Table.Cell className='paragraph-text'>BizBolt LLC</Table.Cell>
+                        <Table.HeaderCell className='table-header'>Company:</Table.HeaderCell>
+                        <Table.Cell className='table-text'>BizBolt LLC</Table.Cell>
                       </Table.Row>
                       <Table.Row>
-                        <Table.HeaderCell className='paragraph-text'>Email:</Table.HeaderCell>
-                        <Table.Cell className='paragraph-text'>Info@bizbolt.com</Table.Cell>
+                        <Table.HeaderCell className='table-header'>Email:</Table.HeaderCell>
+                        <Table.Cell className='table-text'>Info@bizbolt.com</Table.Cell>
                       </Table.Row>
                       <Table.Row>
-                        <Table.HeaderCell className='paragraph-text'>Phone:</Table.HeaderCell>
-                        <Table.Cell className='paragraph-text'>+1 (949) 214-4661</Table.Cell>
+                        <Table.HeaderCell className='table-header'>Phone:</Table.HeaderCell>
+                        <Table.Cell className='table-text'>+1 (949) 214-4661</Table.Cell>
                       </Table.Row>
                       <Table.Row>
-                        <Table.HeaderCell className='paragraph-text'>Address:</Table.HeaderCell>
-                        <Table.Cell className='paragraph-text'>668 N. Coast Hwy., Apt. 1329, Laguna Beach, CA 92651</Table.Cell>
+                        <Table.HeaderCell className='table-header'>Address:</Table.HeaderCell>
+                        <Table.Cell className='table-text'>668 N. Coast Hwy., Apt. 1329, Laguna Beach, CA 92651</Table.Cell>
                       </Table.Row>
                       <Table.Row>
                         <Table.Cell />

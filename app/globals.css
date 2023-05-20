@@ -9,18 +9,35 @@ body {
   background-color: #000000;
 }
 
-.header {
+.main-header {
   font-family: 'Oswald' !important;
-  font-size: 2em !important;
+  font-size: 3em !important;
+  color: #FEC522;
 }
 
 .paragraph-text {
-  font-size: 1.25em;
+  font-size: 1.25em !important;
 }
 
 .accordion .title {
   font-family: 'Kaisei Tokumin' !important;
   font-size: 1.25em !important;
+}
+
+.contacts-header {
+  font-family: 'Oswald' !important;
+  font-size: 2em;
+}
+
+.table-header {
+  font-family: 'Bitter' !important;
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+}
+
+.table-text {
+  font-family: 'Khand' !important;
+  font-size: 1.5em !important;
 }
 
 @media screen and (max-width: 1408px) {

@@ -74,22 +74,22 @@ export default class Home extends Component {
                   <Grid.Column>
                     <Grid.Row>
                       <Grid.Column>
-                        <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.5em' }}>RevOps</p>
+                        <Header size='huge' inverted>
+                          <p className='main-header'>RevOps</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
                       <Grid.Column>
-                        <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.5em' }}>Customized For</p>
+                        <Header size='huge' inverted>
+                          <p className='main-header'>Customized For</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
                       <Grid.Column>
-                        <Header size='huge' inverted color='yellow'>
-                          <p style={{ fontSize: '2.5em' }}>Your Company</p>
+                        <Header size='huge' inverted>
+                          <p className='main-header'>Your Company</p>
                         </Header>
                       </Grid.Column>
                     </Grid.Row>
@@ -116,7 +116,6 @@ export default class Home extends Component {
               <Grid stackable columns='equal' inverted verticalAlign='middle' padded>
                 <Grid.Row>
                   <Grid.Column>
-
                   </Grid.Column>
                   <Grid.Column>
                     <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
