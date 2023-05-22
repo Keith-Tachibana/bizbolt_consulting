@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import {
@@ -8,7 +8,9 @@ import {
   Container,
   Image,
   Button,
-  Segment
+  Segment,
+  Dimmer,
+  Loader
 } from 'semantic-ui-react';
 
 export default class MenuBar extends Component {
@@ -27,69 +29,71 @@ export default class MenuBar extends Component {
     return (
       <InView onChange={this.toggleFixedMenu}>
         <Segment inverted style={ segmentStyle }>
-          <Menu
-            fixed={fixed ? 'top' : null}
-            inverted
-            stackable='true'
-            size='small'
-            borderless
-            style={ segmentStyle }
-          >
-            <Container text>
-              <Menu.Item
-                as='a'
-                href='/'
-              >
-                <Image size='small' alt='Alt logo' src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' />
-              </Menu.Item>
-              <Menu.Item
-                as='a'
-                href='/'
-                name='home'
-                active={activeItem === 'home'}
-                onClick={this.handleItemClick}
-              >
-                Home
-              </Menu.Item>
-              <Menu.Item
-                as='a'
-                href='/services'
-                name='services'
-                active={activeItem === 'services'}
-                onClick={this.handleItemClick}
-              >
-                Services
-              </Menu.Item>
-              <Menu.Item
-                as='a'
-                href='/about'
-                name='about'
-                active={activeItem === 'about'}
-                onClick={this.handleItemClick}
-              >
-                About
-              </Menu.Item>
-              <Menu.Item
-                as='a'
-                href='/contact'
-                name='contact'
-                active={activeItem === 'contact'}
-                onClick={this.handleItemClick}
-              >
-                Contact Us
-              </Menu.Item>
-              <Menu.Item position='right'>
-                <Button
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Menu
+              fixed={fixed ? 'top' : null}
+              inverted
+              stackable='true'
+              size='small'
+              borderless
+              style={ segmentStyle }
+            >
+              <Container text>
+                <Menu.Item
                   as='a'
-                  href='/demo'
-                  inverted
-                  color='teal'
+                  href='/'
                 >
-                  Free Consultation
-                </Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
+                  <Image size='small' alt='Alt logo' src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png' />
+                </Menu.Item>
+                <Menu.Item
+                  as='a'
+                  href='/'
+                  name='home'
+                  active={activeItem === 'home'}
+                  onClick={this.handleItemClick}
+                >
+                  Home
+                </Menu.Item>
+                <Menu.Item
+                  as='a'
+                  href='/services'
+                  name='services'
+                  active={activeItem === 'services'}
+                  onClick={this.handleItemClick}
+                >
+                  Services
+                </Menu.Item>
+                <Menu.Item
+                  as='a'
+                  href='/about'
+                  name='about'
+                  active={activeItem === 'about'}
+                  onClick={this.handleItemClick}
+                >
+                  About
+                </Menu.Item>
+                <Menu.Item
+                  as='a'
+                  href='/contact'
+                  name='contact'
+                  active={activeItem === 'contact'}
+                  onClick={this.handleItemClick}
+                >
+                  Contact Us
+                </Menu.Item>
+                <Menu.Item position='right'>
+                  <Button
+                    as='a'
+                    href='/demo'
+                    inverted
+                    color='teal'
+                  >
+                    Free Consultation
+                  </Button>
+                </Menu.Item>
+              </Container>
+            </Menu>
+          </Suspense>
         </Segment>
       </InView>
     );

@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "express-session": "^1.17.3",
+    "express.js": "^1.0.0",
     "formik": "^2.2.9",
     "formik-semantic-ui-react": "^2.0.0",
-    "next": "13.4.1",
+    "multer": "^1.4.5-lts.1",
+    "next": "^13.4.3",
+    "pg": "^8.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.3",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
+    "session-file-store": "^1.5.0",
     "typed.js": "^2.0.16",
     "yup": "^1.1.1"
   }

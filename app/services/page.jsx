@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 import {
   Accordion,
@@ -10,8 +10,11 @@ import {
   Button,
   Image,
   Embed,
+  Divider,
   Grid,
-  Container
+  Container,
+  Dimmer,
+  Loader
 } from 'semantic-ui-react';
 
 const level1Panels = [
@@ -104,18 +107,37 @@ const level2dPanels = [
   }
 ];
 
+const level3Panels = [
+  {
+    key: 'panel-3a',
+    title: 'Custom Reports',
+    content: 'Our experts can help you design and implement custom reports and dashboards to track and visualize your key business metrics. By consolidating data and providing real-time insights, you can make data-driven decisions and improve business performance.'
+  },
+  {
+    key: 'panel-3b',
+    title: 'Full-Cycle Reporting',
+    content: 'We can help you implement a full cycle reporting system that tracks your revenue performance from lead generation to customer retention. By identifying and addressing bottlenecks and inefficiencies in your revenue cycle, you can optimize your revenue growth and improve customer satisfaction.'
+  },
+  {
+    key: 'panel-3c',
+    title: 'Forecasting Revenue',
+    content: 'Our consultants can help you develop a revenue forecasting model that predicts future revenue growth based on historical data and market trends. By accurately forecasting revenue, you can make informed decisions and develop strategies to improve business performance.'
+  },
+  {
+    key: 'panel-3d',
+    title: 'Customer Journey',
+    content: 'Our team can help you map and optimize your customer journey, from initial contact to post-sale engagement. By understanding your customer\'s needs and pain points, you can provide a seamless and personalized experience that improves customer satisfaction and drives revenue growth.'
+  }
+];
+
 const level1Content = (
-  <Header inverted>
-    <Image circular src='/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif' />
-    Data Services / CRM
+  <Header inverted id='data'>
     <Accordion.Accordion panels={level1Panels} inverted />
   </Header>
 );
 
 const level2Content = (
-  <Header inverted>
-    <Image circular src='/assets/Icons/Gifs/970-video-conference-outline copy.gif' />
-    Revenue Teams
+  <Header inverted id='revenue'>
     <Accordion.Accordion panels={level2Panels} inverted />
     <Accordion.Accordion panels={level2bPanels} inverted />
     <Accordion.Accordion panels={level2cPanels} inverted />
@@ -150,67 +172,90 @@ const level2dContent = (
   </Header>
 );
 
+const level3Content = (
+  <Header inverted id='insight'>
+    <Accordion.Accordion panels={level3Panels} inverted />
+  </Header>
+);
+
 const rootPanels = [
-  { key: 'panel-1', title: 'Data Services', content: { content: level1Content } },
-  { key: 'panel-2', title: 'Revenue Teams', content: { content: level2Content } }
+  { key: 'panel-1', title: 'Data Services / CRM', content: { content: level1Content } },
+  { key: 'panel-2', title: 'Revenue Teams', content: { content: level2Content } },
+  { key: 'panel-3', title: 'Insight & Analytics', content: { content: level3Content } }
 ];
 
 export default class Services extends Component {
   render() {
+
     const segmentStyle = {
       backgroundColor: '#000000'
     };
 
+    const dividerStyle = {
+      minWidth: '80vw',
+      marginBottom: '2em'
+    }
+
     return (
       <Segment.Group>
         <Segment inverted padded style={ segmentStyle }>
-          <Container textAlign='center'>
-            <Header size='large' inverted>
-              How It's Done
-            </Header>
-          </Container>
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Container textAlign='center'>
+              <Header as='h3' className='main-header' inverted>
+                How It's Done
+              </Header>
+            </Container>
+          </Suspense>
         </Segment>
         <Segment inverted padded style={ segmentStyle }>
-          <Container>
-            <Grid stackable verticalAlign='middle' inverted padded>
-              <Grid.Row textAlign='center'>
-                <Grid.Column>
-                  <Container>
-                    <Embed
-                      id='nf8BrMTK9dM'
-                      placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-black.png'
-                      source='youtube'
-                    />
-                  </Container>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row textAlign='center'>
-                <Grid.Column style={{ padding: '1em' }}>
-                  <Button
-                    as='a'
-                    href='/demo'
-                    inverted
-                    color='teal'
-                    size='huge'
-                  >
-                    Meet with an Expert
-                  </Button>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Container>
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Container>
+              <Divider as='h4' inverted horizontal>Watch</Divider>
+              <Grid stackable verticalAlign='middle' inverted padded>
+                <Grid.Row textAlign='center'>
+                  <Grid.Column>
+                    <Container>
+                      <Embed
+                        id='nf8BrMTK9dM'
+                        placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-black.png'
+                        source='youtube'
+                      />
+                    </Container>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row textAlign='center'>
+                  <Grid.Column style={{ padding: '1em' }}>
+                    <Button
+                      as='a'
+                      href='/demo'
+                      inverted
+                      color='teal'
+                      size='huge'
+                    >
+                      Meet with an Expert
+                    </Button>
+                  </Grid.Column>
+                </Grid.Row>
+                <hr style={ dividerStyle }  />
+              </Grid>
+            </Container>
+          </Suspense>
         </Segment>
         <Segment inverted padded style={ segmentStyle }>
-          <Container textAlign='center'>
-            <Header size='large' inverted>
-              Our Services
-            </Header>
-          </Container>
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Container textAlign='center'>
+              <Header as='h3' className='main-header' inverted>
+                Our Services
+              </Header>
+            </Container>
+          </Suspense>
         </Segment>
         <Segment inverted padded style={ segmentStyle }>
-          <Container textAlign='center'>
-            <Accordion defaultActiveIndex={0} panels={rootPanels} inverted />
-          </Container>
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Container textAlign='center'>
+              <Accordion defaultActiveIndex={0} panels={rootPanels} inverted />
+            </Container>
+          </Suspense>
         </Segment>
       </Segment.Group>
     );

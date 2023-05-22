@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'Yup';
 
@@ -12,7 +12,9 @@ import {
   Label,
   FormField,
   FormGroup,
-  Table
+  Table,
+  Dimmer,
+  Loader
 } from 'semantic-ui-react';
 
 import {
@@ -23,7 +25,8 @@ import {
   Select,
   Radio,
   SubmitButton,
-  ResetButton
+  ResetButton,
+  FormikDebug
 } from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
@@ -75,17 +78,9 @@ export default class Contact extends Component {
     const { gender } = this.state;
 
     const countryOptions = [
-      { key: 'af', value: 'af', text: 'Afghanistan' },
-      { key: 'dz', value: 'dz', text: 'Algeria' },
-      { key: 'as', value: 'as', text: 'American Samoa' },
-      { key: 'ad', value: 'ad', text: 'Andorra' },
-      { key: 'ao', value: 'ao', text: 'Angola' },
-      { key: 'bd', value: 'bd', text: 'Bangladesh' },
-      { key: 'bb', value: 'bb', text: 'Barbados' },
-      { key: 'by', value: 'by', text: 'Belarus' },
-      { key: 'be', value: 'be', text: 'Belgium' },
-      { key: 'us', value: 'us', text: 'United States of America' }
+      { key: 'US', name: 'United States' }
     ];
+
 
     const initialValues = {
       firstName: '',
@@ -102,8 +97,9 @@ export default class Contact extends Component {
       firstName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
       lastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      gender: Yup.string().oneOf(['Male', 'Female', 'Other']).required('Required'),
-      country: Yup.string().oneOf(countryOptions.map(country => country.value)).required('Required')
+      gender: Yup.string().oneOf(['male', 'female', 'other']).required('Required'),
+      country: Yup.string().oneOf(countryOptions.map(country => country.value)),
+      question: Yup.string().oneOf(['generalQuestions', 'careerOpportunities', 'partnerships']).required('Required')
     });
 
     const segmentStyle = {
@@ -118,129 +114,141 @@ export default class Contact extends Component {
     };
 
     return (
-      <Segment.Group >
+      <Segment.Group>
         <Segment inverted padded style={ segmentStyle }>
-          <Grid container centered columns={2}>
-            <Grid.Row>
-              <Grid.Column>
-                <Header as='h1' inverted textAlign='center' style={ segmentStyle }>
-                  <p>Send us a message with the form below</p>
-                </Header>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                <Formik
-                  initialValues={ initialValues }
-                  validationSchema={ validationSchema }
-                  onSubmit={this.handleSubmit}
-                >
-                  <Form inverted size='large'>
-                    <Input
-                      type='text'
-                      name='firstName'
-                      placeholder='First name'
-                      label='First Name:'
-                      icon='user'
-                      iconPosition='left'
-                      value={Formik.v}
-                      inverted
-                      errorPrompt
-                    />
-                    <Input
-                      type='text'
-                      name='lastName'
-                      placeholder='Last name'
-                      label='Last Name:'
-                      icon='users'
-                      iconPosition='left'
-                      inverted
-                      errorPrompt
-                    />
-                    <FormField>
-                      <Label htmlFor='gender' style={ labelStyle }>Gender:</Label>
-                      <FormGroup inline>
-                        <Radio
-                          type='radio'
-                          name='gender'
-                          value='male'
-                          label='Male'
-                        />
-                        <Radio
-                          type='radio'
-                          name='gender'
-                          value='female'
-                          label='Female'
-                        />
-                        <Radio
-                          type='radio'
-                          name='gender'
-                          value='other'
-                          label='Other'
-                          errorPrompt
-                        />
-                      </FormGroup>
-                    </FormField>
-                    <Input
-                      type='email'
-                      name='email'
-                      placeholder='john@example.com'
-                      label='E-mail Address:'
-                      icon='mail'
-                      iconPosition='left'
-                      inverted
-                      errorPrompt
-                    />
-                    <Label htmlFor='country' style={ labelStyle }>Select your country of origin:</Label>
-                    <Select
-                      name='country'
-                      clearable
-                      inverted
-                      placeholder='Select your country'
-                      options={countryOptions}
-                      errorPrompt
-                    />
-                    <FormField>
-                      <Label htmlFor='question' style={ labelStyle }>What is your question about?</Label>
+          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+            <Grid container centered columns={2}>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header as='h1' inverted textAlign='center' style={ segmentStyle }>
+                    <p>Send us a message with the form below</p>
+                  </Header>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header as='h4' inverted textAlign='center' style={ segmentStyle }>
+                    <p className='paragraph-text main-bullet1'>E-mail sent to info@bizbolt.com</p>
+                  </Header>
+                  <Formik
+                    initialValues={ initialValues }
+                    validationSchema={ validationSchema }
+                    onSubmit={this.handleSubmit}
+                  >
+                    <Form inverted size='large'>
+                      <Input
+                        type='text'
+                        name='firstName'
+                        placeholder='First name'
+                        label='First Name:'
+                        icon='user'
+                        iconPosition='left'
+                        inverted
+                        errorPrompt
+                      />
+                      <Input
+                        type='text'
+                        name='lastName'
+                        placeholder='Last name'
+                        label='Last Name:'
+                        icon='users'
+                        iconPosition='left'
+                        inverted
+                        errorPrompt
+                      />
+                      <FormField>
+                        <Label htmlFor='gender' style={ labelStyle }>Gender:</Label>
+                        <FormGroup inline>
+                          <Radio
+                            type='radio'
+                            name='gender'
+                            value='male'
+                            label='Male'
+                          />
+                          <Radio
+                            type='radio'
+                            name='gender'
+                            value='female'
+                            label='Female'
+                          />
+                          <Radio
+                            type='radio'
+                            name='gender'
+                            value='other'
+                            label='Other'
+                            errorPrompt
+                          />
+                        </FormGroup>
+                      </FormField>
+                      <Input
+                        type='email'
+                        name='email'
+                        placeholder='john@example.com'
+                        label='E-mail Address:'
+                        icon='mail'
+                        iconPosition='left'
+                        inverted
+                        errorPrompt
+                      />
+                      <Label htmlFor='country' style={ labelStyle }>Select your country of origin:</Label>
+                      <Select
+                        name='country'
+                        clearable
+                        inverted
+                        placeholder='Select your country'
+                        options={countryOptions}
+                        errorPrompt
+                      />
+                      <FormField>
+                        <Label htmlFor='question' style={ labelStyle }>What is your question about?</Label>
+                        <FormGroup>
+                          <Radio
+                            type='radio'
+                            name='question'
+                            value='generalQuestions'
+                            label='General questions'
+                          />
+                          <Radio
+                            type='radio'
+                            name='question'
+                            value='careerOpportunities'
+                            label='Career opportunities'
+                          />
+                          <Radio
+                            type='radio'
+                            name='question'
+                            value='partnerships'
+                            label='Partnerships'
+                            errorPrompt
+                          />
+                        </FormGroup>
+                      </FormField>
+                      <Label htmlFor='comments' style={ labelStyle }>Comments:</Label>
+                      <TextArea
+                        name='comments'
+                        placeholder='How can we help you?'
+                        style={{ minHeight: '100' }}
+                      />
+                      <Input
+                        type='file'
+                        name='file'
+                        label='Upload attachments:'
+                      />
                       <FormGroup>
-                        <Radio
-                          type='radio'
-                          name='question'
-                          value='generalQuestions'
-                          label='General questions'
-                        />
-                        <Radio
-                          type='radio'
-                          name='question'
-                          value='careerOpportunities'
-                          label='Career opportunities'
-                        />
-                        <Radio
-                          type='radio'
-                          name='question'
-                          value='partnerships'
-                          label='Partnerships'
-                          errorPrompt
-                        />
+                        <SubmitButton color='teal' inverted size='huge'>
+                          Submit
+                        </SubmitButton>
+                        <ResetButton color='yellow' inverted size='huge'>
+                          Reset
+                        </ResetButton>
                       </FormGroup>
-                    </FormField>
-                    <Label htmlFor='comments' style={ labelStyle }>Comments:</Label>
-                    <TextArea
-                      name='comments'
-                      placeholder='How can we help you?'
-                      style={{ minHeight: '100' }}
-                    />
-                    <Input
-                      type='file'
-                      name='file'
-                      label='Upload attachments:'
-                    />
-                  </Form>
-                </Formik>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
+                      <FormikDebug />
+                    </Form>
+                  </Formik>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
                   <Table inverted celled style={ segmentStyle }>
                     <Table.Header>
                       <Table.Row>
@@ -270,9 +278,10 @@ export default class Contact extends Component {
                       </Table.Row>
                     </Table.Body>
                   </Table>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Suspense>
         </Segment>
       </Segment.Group>
     );

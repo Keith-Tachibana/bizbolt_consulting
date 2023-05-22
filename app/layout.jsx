@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={khand.className}>
+      <body className={khand.className, oswald.className, kaisei.className, bitter.className}>
         <MenuBar />
         {children}
         <Footer />

@@ -15,8 +15,32 @@ body {
   color: #FEC522;
 }
 
+.main-subheader {
+  font-family: 'Kaisei Tokumin' !important;
+  font-size: 2em !important;
+}
+
+.main-divider {
+  font-family: 'Khand' !important;
+  margin: 3em 0 !important;
+  text-transform: uppercase;
+}
+
+.main-description {
+  margin-top: 1em !important;
+}
+
+.main-bullet1:hover,
+.main-bullet3:hover {
+  color: #FEC522 !important;
+}
+
+.main-bullet2:hover {
+  color: #3176C1 !important;
+}
+
 .paragraph-text {
-  font-size: 1.25em !important;
+  font-size: 1.5em !important;
 }
 
 .accordion .title {
@@ -37,6 +61,11 @@ body {
 
 .table-text {
   font-family: 'Khand' !important;
+  font-size: 1.5em !important;
+}
+
+.about-header {
+  font-family: 'Oswald' !important;
   font-size: 1.5em !important;
 }
 
