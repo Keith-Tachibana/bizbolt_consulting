@@ -41,38 +41,51 @@ export default class Contact extends Component {
     file: ''
   };
 
-  handleSubmit  = () => {
-    console.log('Submitted');
-  };
-
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleRadio = event => {
-    this.setState({
-      gender: event.target.value
-    });
-  };
-
-  handleFile = event => {
+  async handleSubmit = event => {
     event.preventDefault();
-    const file = event.target.files[0];
-    file['uploadId'] = event.target.id;
-
-    console.log(file);
-
-    const files = this.state.file;
-    this.setState({
-      file: [...files, file]
-    });
+    try {
+      const body = this.state;
+      await fetch('/api/post/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+    } catch (error) {
+      console.error(error);
+    };
   };
+  };
+
+  // handleChange = event => {
+  //   const target = event.target;
+  //   const value = target.type === 'checkbox' ? target.checked : target.value;
+  //   const name = target.name;
+
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
+  // handleRadio = event => {
+  //   this.setState({
+  //     gender: event.target.value
+  //   });
+  // };
+
+  // handleFile = event => {
+  //   event.preventDefault();
+  //   const file = event.target.files[0];
+  //   file['uploadId'] = event.target.id;
+
+  //   console.log(file);
+
+  //   const files = this.state.file;
+  //   this.setState({
+  //     file: [...files, file]
+  //   });
+  // };
 
   render() {
     const { gender } = this.state;
@@ -99,7 +112,8 @@ export default class Contact extends Component {
       email: Yup.string().email('Invalid email address').required('Required'),
       gender: Yup.string().oneOf(['male', 'female', 'other']).required('Required'),
       country: Yup.string().oneOf(countryOptions.map(country => country.value)),
-      question: Yup.string().oneOf(['generalQuestions', 'careerOpportunities', 'partnerships']).required('Required')
+      question: Yup.string().oneOf(['generalQuestions', 'careerOpportunities', 'partnerships']).required('Required'),
+      comments: Yup.string().max(3000, 'Must be 3,000 characters or less')
     });
 
     const segmentStyle = {

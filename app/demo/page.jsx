@@ -40,32 +40,44 @@ export default class Demo extends Component {
     demoFile: ''
   };
 
-  handleSubmit  = () => {
-    console.log('Submitted');
-  };
-
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFile = event => {
+  async handleSubmit  = event => {
     event.preventDefault();
-    const file = event.target.files[0];
-    file['uploadId'] = event.target.id;
-
-    console.log(file);
-
-    const files = this.state.file;
-    this.setState({
-      file: [...files, file]
-    });
+    try {
+      const body = this.state;
+      await fetch('/api/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+    } catch (error) {
+      console.error(error);
+    };
   };
+
+  // handleChange = event => {
+  //   const target = event.target;
+  //   const value = target.type === 'checkbox' ? target.checked : target.value;
+  //   const name = target.name;
+
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
+  // handleFile = event => {
+  //   event.preventDefault();
+  //   const file = event.target.files[0];
+  //   file['uploadId'] = event.target.id;
+
+  //   console.log(file);
+
+  //   const files = this.state.file;
+  //   this.setState({
+  //     file: [...files, file]
+  //   });
+  // };
 
   render() {
     const initialValues = {
@@ -117,7 +129,7 @@ export default class Demo extends Component {
                   <Formik
                     initialValues={ initialValues }
                     validationSchema={ validationSchema }
-                    onSubmit={this.handleSubmit}
+                    onSubmit={ this.handleSubmit }
                   >
                     <Form inverted size='large'>
                       <Input

@@ -4,9 +4,9 @@ import { Khand, Oswald, Kaisei_Tokumin, Bitter } from 'next/font/google';
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
 
-const khand = Khand({ subsets: ['latin'], weight: ['400', '700'] });
+const khand = Khand({ subsets: ['latin'], weight: ['400'] });
 const oswald = Oswald({ subsets: ['latin'], weight: ['400', '700'] });
-const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: ['400', '700'] });
+const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: ['400'] });
 const bitter = Bitter({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata = {

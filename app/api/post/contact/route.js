@@ -1,16 +1,5 @@
-import { NextResponse } from 'next/server';
-import prisma from '../lib/prisma';
+import prisma from '../../../lib/prisma';
 
-// export async function GET() {
-//   const res = await fetch('/api/route', {
-//     headers: {
-//       'Content-Type': 'application/json'
-//     };
-//   });
-//   const data = await res.json();
-
-//   return NextResponse.json({ data });
-// };
 
 export async function POST(req) {
   const { firstName, lastName, email, gender, country, question, comment, file } = req.body;
@@ -27,5 +16,3 @@ export async function POST(req) {
     }
   })
   return res.status(201).json(result);
-
-};
