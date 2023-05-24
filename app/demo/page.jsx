@@ -56,29 +56,6 @@ export default class Demo extends Component {
     };
   };
 
-  // handleChange = event => {
-  //   const target = event.target;
-  //   const value = target.type === 'checkbox' ? target.checked : target.value;
-  //   const name = target.name;
-
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-  // handleFile = event => {
-  //   event.preventDefault();
-  //   const file = event.target.files[0];
-  //   file['uploadId'] = event.target.id;
-
-  //   console.log(file);
-
-  //   const files = this.state.file;
-  //   this.setState({
-  //     file: [...files, file]
-  //   });
-  // };
-
   render() {
     const initialValues = {
       demoFirstName: '',
@@ -96,7 +73,7 @@ export default class Demo extends Component {
       demoEmail: Yup.string().email('Invalid email address').required('Required'),
       demoCompany: Yup.string().max(25, 'Must be 25 characters or less').required('Required'),
       demoQuestion: Yup.string().oneOf(['data', 'revenueTeams', 'insightsAndReporting', 'allServices', 'generalQuestions']).required('Required'),
-      demoComment: Yup.string().max(3500, 'Must be 3,500 characters or less')
+      demoComments: Yup.string().max(3500, 'Must be 3,500 characters or less')
     });
 
     const segmentStyle = {
