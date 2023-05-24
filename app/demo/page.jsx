@@ -40,11 +40,11 @@ export default class Demo extends Component {
     demoFile: ''
   };
 
-  async handleSubmit  = event => {
+  async handleSubmit(event) {
     event.preventDefault();
     try {
       const body = this.state;
-      await fetch('/api/post', {
+      await fetch('/api/post/demo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -95,7 +95,8 @@ export default class Demo extends Component {
       demoLastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
       demoEmail: Yup.string().email('Invalid email address').required('Required'),
       demoCompany: Yup.string().max(25, 'Must be 25 characters or less').required('Required'),
-      demoQuestion: Yup.string().oneOf(['data', 'revenueTeams', 'insightsAndReporting', 'allServices', 'generalQuestions']).required('Required')
+      demoQuestion: Yup.string().oneOf(['data', 'revenueTeams', 'insightsAndReporting', 'allServices', 'generalQuestions']).required('Required'),
+      demoComment: Yup.string().max(3500, 'Must be 3,500 characters or less')
     });
 
     const segmentStyle = {

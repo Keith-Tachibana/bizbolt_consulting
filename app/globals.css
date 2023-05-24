@@ -12,7 +12,7 @@ body {
 .main-header {
   font-family: 'Oswald' !important;
   font-size: 3em !important;
-  color: #FEC522;
+  color: #FEC522 !important;
 }
 
 .main-subheader {
@@ -23,7 +23,8 @@ body {
 .main-divider {
   font-family: 'Khand' !important;
   margin: 3em 0 !important;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
+  color: #FEC522 !important;
 }
 
 .main-description {
@@ -50,7 +51,7 @@ body {
 
 .contacts-header {
   font-family: 'Oswald' !important;
-  font-size: 2em;
+  font-size: 2em !important;
 }
 
 .table-header {

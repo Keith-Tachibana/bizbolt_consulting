@@ -34,7 +34,6 @@ export default class Home extends Component {
     this.setState({ activeIndex: newIndex });
   };
 
-
   componentDidMount() {
     const options = {
       strings: words,
@@ -141,7 +140,7 @@ export default class Home extends Component {
                     <Image src='/assets/Icons/Gifs/981-consultation-outline-2.gif' alt='Consultation gif' size='large' rounded />
                   </Grid.Column>
                 </Grid.Row>
-                <Divider as='h4' horizontal inverted>Watch</Divider>
+                <Divider as='h4' horizontal inverted className='main-divider'>Watch</Divider>
               </Grid>
             </Container>
           </Segment>
@@ -265,7 +264,6 @@ export default class Home extends Component {
                       inverted
                       color='teal'
                       size='huge'
-                      style={{  }}
                     >
                       Contact Us
                     </Button>

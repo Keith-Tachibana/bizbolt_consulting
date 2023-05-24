@@ -41,10 +41,11 @@ export default class Contact extends Component {
     file: ''
   };
 
-  async handleSubmit = event => {
+  async handleSubmit(event) {
     event.preventDefault();
     try {
       const body = this.state;
+      console.log('Contact body:', body);
       await fetch('/api/post/contact', {
         method: 'POST',
         headers: {
@@ -56,36 +57,6 @@ export default class Contact extends Component {
       console.error(error);
     };
   };
-  };
-
-  // handleChange = event => {
-  //   const target = event.target;
-  //   const value = target.type === 'checkbox' ? target.checked : target.value;
-  //   const name = target.name;
-
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-  // handleRadio = event => {
-  //   this.setState({
-  //     gender: event.target.value
-  //   });
-  // };
-
-  // handleFile = event => {
-  //   event.preventDefault();
-  //   const file = event.target.files[0];
-  //   file['uploadId'] = event.target.id;
-
-  //   console.log(file);
-
-  //   const files = this.state.file;
-  //   this.setState({
-  //     file: [...files, file]
-  //   });
-  // };
 
   render() {
     const { gender } = this.state;
@@ -93,7 +64,6 @@ export default class Contact extends Component {
     const countryOptions = [
       { key: 'US', name: 'United States' }
     ];
-
 
     const initialValues = {
       firstName: '',
