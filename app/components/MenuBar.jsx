@@ -51,6 +51,7 @@ export default class MenuBar extends Component {
                   name='home'
                   active={activeItem === 'home'}
                   onClick={this.handleItemClick}
+                  style={{  }}
                 >
                   Home
                 </Menu.Item>
@@ -60,6 +61,7 @@ export default class MenuBar extends Component {
                   name='services'
                   active={activeItem === 'services'}
                   onClick={this.handleItemClick}
+                  style={{  }}
                 >
                   Services
                 </Menu.Item>
@@ -69,6 +71,7 @@ export default class MenuBar extends Component {
                   name='about'
                   active={activeItem === 'about'}
                   onClick={this.handleItemClick}
+                  style={{  }}
                 >
                   About
                 </Menu.Item>
@@ -78,6 +81,7 @@ export default class MenuBar extends Component {
                   name='contact'
                   active={activeItem === 'contact'}
                   onClick={this.handleItemClick}
+                  style={{  }}
                 >
                   Contact Us
                 </Menu.Item>

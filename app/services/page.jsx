@@ -201,7 +201,7 @@ export default class Services extends Component {
         <Segment inverted padded style={ segmentStyle }>
           <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
             <Container textAlign='center'>
-              <Header as='h3' className='main-header' inverted>
+              <Header as='h3' className='main-subheader' inverted>
                 How It's Done
               </Header>
             </Container>
@@ -214,7 +214,7 @@ export default class Services extends Component {
               <Grid stackable verticalAlign='middle' inverted padded>
                 <Grid.Row textAlign='center'>
                   <Grid.Column>
-                    <Container>
+                    <Container className='main-embed'>
                       <Embed
                         id='nf8BrMTK9dM'
                         placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-black.png'

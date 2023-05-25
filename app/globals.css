@@ -37,7 +37,15 @@ body {
 }
 
 .main-bullet2:hover {
-  color: #3176C1 !important;
+  color: #00EDDB !important;
+}
+
+.main-embed {
+  border: 1px #FEC522 solid;
+}
+
+.main-list {
+  padding-left: 3em !important;
 }
 
 .paragraph-text {
@@ -68,6 +76,25 @@ body {
 .about-header {
   font-family: 'Oswald' !important;
   font-size: 1.5em !important;
+}
+
+.privacy-subheader {
+  font-family: 'Kaisei Tokumin' !important;
+  font-size: 1.5em !important;
+  color: #00EDDB !important;
+}
+
+.privacy-subsubheader {
+  font-size: 1.25em !important;
+  color: #FEC522 !important;
+}
+
+.privacy-subsubsubheader {
+  color: #FFFFFF !important;
+}
+
+.privacy-text {
+  font-size: 1.15em !important;
 }
 
 @media screen and (max-width: 1408px) {

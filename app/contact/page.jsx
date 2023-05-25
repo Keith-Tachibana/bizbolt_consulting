@@ -46,7 +46,7 @@ export default class Contact extends Component {
     try {
       const body = this.state;
       console.log('Contact body:', body);
-      await fetch('/api/post/contact', {
+      await fetch('/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

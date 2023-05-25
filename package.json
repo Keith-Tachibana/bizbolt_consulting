@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate:postgres": "dotenv -e .env.local -- npx prisma migrate dev --name init"
+    "prebuild": "npx prisma generate",
+    "push:postgres": "dotenv -e .env.local -- npx prisma db push",
+    "migrate:postgres": "dotenv -e .env.local -- npx prisma migrate dev --name init",
+    "validate:postgres": "dotenv -e .env.local -- npx prisma validate"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js",
+    "schema": "prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^4.14.1",
