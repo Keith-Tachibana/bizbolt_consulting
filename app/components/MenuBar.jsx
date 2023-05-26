@@ -104,25 +104,3 @@ export default class MenuBar extends Component {
     );
   };
 };
-
-export function MobileMenuBar() {
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const drawerRef = useRef(null);
-
-  useEffect(() => {
-    const closeDrawer = event => {
-      if (drawerRef.current && drawerRef.current.contains(event.target)) {
-        return;
-      }
-
-      setOpenDrawer(false);
-    };
-
-    document.addEventListener("mousedown", closeDrawer);
-    return () => document.removeEventListener("mousedown", closeDrawer);
-  }, []);
-
-  return (
-
-  );
-};
