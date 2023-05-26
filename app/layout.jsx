@@ -22,6 +22,10 @@ export default function RootLayout({ children }) {
         <MenuBar />
         {children}
         <Footer />
+        <video autoPlay muted loop className='video-bg'>
+          <source src='/assets/AI_Videos/thunder.mp4' />
+          Your browser doesn't support HTML5 video playback.
+        </video>
       </body>
     </html>
   );

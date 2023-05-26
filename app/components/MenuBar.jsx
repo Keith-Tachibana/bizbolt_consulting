@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component, Suspense, useState, useEffect, useRef } from 'react';
+import React, { Component, Suspense } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import {
@@ -52,7 +52,6 @@ export default class MenuBar extends Component {
                   name='home'
                   active={activeItem === 'home'}
                   onClick={this.handleItemClick}
-                  style={{  }}
                 >
                   Home
                 </Menu.Item>
@@ -62,7 +61,6 @@ export default class MenuBar extends Component {
                   name='services'
                   active={activeItem === 'services'}
                   onClick={this.handleItemClick}
-                  style={{  }}
                 >
                   Services
                 </Menu.Item>
@@ -72,7 +70,6 @@ export default class MenuBar extends Component {
                   name='about'
                   active={activeItem === 'about'}
                   onClick={this.handleItemClick}
-                  style={{  }}
                 >
                   About
                 </Menu.Item>
@@ -82,7 +79,6 @@ export default class MenuBar extends Component {
                   name='contact'
                   active={activeItem === 'contact'}
                   onClick={this.handleItemClick}
-                  style={{  }}
                 >
                   Contact Us
                 </Menu.Item>
@@ -95,6 +91,20 @@ export default class MenuBar extends Component {
                   >
                     Free Consultation
                   </Button>
+                  <button className='hamburger'>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="white"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 </Menu.Item>
               </Container>
             </Menu>
