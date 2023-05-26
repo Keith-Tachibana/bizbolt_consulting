@@ -26,7 +26,8 @@ import {
   Select,
   Radio,
   SubmitButton,
-  ResetButton
+  ResetButton,
+  FormikDebug
 } from 'formik-semantic-ui-react';
 
 export default class Demo extends Component {
@@ -44,7 +45,7 @@ export default class Demo extends Component {
     event.preventDefault();
     try {
       const body = this.state;
-      await fetch('/api/post/demo', {
+      await fetch('/api/demo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

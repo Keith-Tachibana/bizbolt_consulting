@@ -149,7 +149,7 @@ export default class Home extends Component {
               <Grid stackable verticalAlign='middle' inverted padded>
                 <Grid.Row textAlign='center'>
                   <Grid.Column>
-                    <Container>
+                    <Container className='main-embed'>
                       <Embed
                         id='cxmrVD45aR4'
                         placeholder='/assets/Images/Video_Design/people-collaborating-with-tech-black.png'
@@ -190,7 +190,7 @@ export default class Home extends Component {
                     <List divided relaxed inverted>
                       <List.Item className='main-bullet1'>
                         <List.Icon name='chart line' size='huge' verticalAlign='middle' />
-                        <List.Content>
+                        <List.Content className='main-list'>
                           <List.Header className='main-subheader'>Track record of delivering results</List.Header>
                           <List.Description className='main-description'>
                             <p className='paragraph-text'>Our clients have seen an average increase of 25% in revenue growth and a 30% improvement in sales efficiency after working with us.</p>
@@ -199,7 +199,7 @@ export default class Home extends Component {
                       </List.Item>
                       <List.Item className='main-bullet2'>
                         <List.Icon name='database' size='huge' verticalAlign='middle' />
-                        <List.Content>
+                        <List.Content className='main-list'>
                           <List.Header className='main-subheader'>Data-driven!</List.Header>
                           <List.Description className='main-description'>
                             <p className='paragraph-text'>We understand that every business is unique, which is why we offer customizable solutions tailored to your specific needs.</p>
@@ -208,7 +208,7 @@ export default class Home extends Component {
                       </List.Item>
                       <List.Item className='main-bullet3'>
                         <List.Icon name='edit' size='huge' verticalAlign='middle' />
-                        <List.Content>
+                        <List.Content className='main-list'>
                           <List.Header className='main-subheader'>Customizable solutions</List.Header>
                           <List.Description className='main-description'>
                             <p className='paragraph-text'>Our solutions are rooted in data analysis, providing a solid foundation for sustainable growth and business decisions.</p>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { PrismaClient } from '@prisma/client';
+import prisma from '../lib/prisma';
 
 export async function GET(req) {
   const { firstName, lastName, email, gender, country, question, comment, file } = req.body;
