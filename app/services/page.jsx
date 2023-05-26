@@ -132,6 +132,7 @@ const level3Panels = [
 
 const level1Content = (
   <Header inverted id='data'>
+    <Image src='/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif' size='large' inverted />
     <Accordion.Accordion panels={level1Panels} inverted />
   </Header>
 );
