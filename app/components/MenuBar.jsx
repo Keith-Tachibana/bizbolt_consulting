@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component, Suspense } from 'react';
+import React, { Component, Suspense, useState, useEffect, useRef } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import {
@@ -37,6 +37,7 @@ export default class MenuBar extends Component {
               size='small'
               borderless
               style={ segmentStyle }
+              className='menu-wrapper'
             >
               <Container text>
                 <Menu.Item
@@ -98,4 +99,26 @@ export default class MenuBar extends Component {
       </InView>
     );
   };
+};
+
+export function MobileMenuBar() {
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const drawerRef = useRef(null);
+
+  useEffect(() => {
+    const closeDrawer = event => {
+      if (drawerRef.current && drawerRef.current.contains(event.target)) {
+        return;
+      }
+
+      setOpenDrawer(false);
+    };
+
+    document.addEventListener("mousedown", closeDrawer);
+    return () => document.removeEventListener("mousedown", closeDrawer);
+  }, []);
+
+  return (
+
+  );
 };
