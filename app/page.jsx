@@ -149,8 +149,8 @@ export default class Home extends Component {
       <br />
       <br />
       <br />
-      <Header as='h3' inverted className='main-header' textAlign='center'>
-        Watch
+      <Header as='h3' inverted className='main-divider' textAlign='center'>
+        Press play!
       </Header>
       <br />
       <br />

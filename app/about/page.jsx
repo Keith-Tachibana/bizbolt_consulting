@@ -23,16 +23,22 @@ export default function About() {
   };
 
   return (
-    <Segment.Group>
+    <>
+      <br />
+      <br />
+      <br />
+      <Header as='h2' inverted color='teal' textAlign='center'>
+        <b className='about-header'>BizBolt Overview</b>
+      </Header>
+      <br />
+      <br />
+      <br />
       <Segment inverted padded style={ segmentStyle }>
         <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
           <Container>
             <Grid>
               <Grid.Row stretched>
                 <Grid.Column>
-                  <Header as='h2' inverted color='teal' textAlign='center' style={ segmentStyle }>
-                    <b className='about-header'>BizBolt Overview</b>
-                  </Header>
                   <Segment inverted style={ aboutStyle }>
                     <p className='paragraph-text'>Welcome to BizBolt, a leading revenue operations consultancy that drives growth and maximizes revenue for businesses. Our expert consultants employ a data-driven approach to enhance
                       sales, marketing, and customer success operations, delivering measurable results for clients.
@@ -49,7 +55,7 @@ export default function About() {
               <Grid.Row stretched>
                 <Grid.Column>
                   <Header as='h2' inverted color='yellow' textAlign='center' style={ segmentStyle }>
-                    <b className='about-header'>Our Mission</b>
+                    <b className='about-header'>Our Reason</b>
                   </Header>
                   <Segment inverted style={ aboutStyle }>
                     <p className='paragraph-text'>BizBolt was founded with the belief that exceptional revenue operations consultants should strive to work themselves out of a job by implementing automation and data-driven solutions.
@@ -68,6 +74,6 @@ export default function About() {
           </Container>
         </Suspense>
       </Segment>
-    </Segment.Group>
+    </>
   );
 };

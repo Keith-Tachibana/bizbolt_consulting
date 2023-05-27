@@ -4,11 +4,6 @@
   margin: 0;
 }
 
-html,
-body {
-
-}
-
 .typed-span {
   white-space: pre !important;
   display: flex !important;
@@ -21,7 +16,7 @@ body {
 
 .main-header {
   font-family: 'Oswald' !important;
-  font-size: 3em !important;
+  font-size: 2.5em !important;
   color: #FEC522 !important;
 }
 
@@ -32,10 +27,9 @@ body {
 
 .main-divider {
   font-family: 'Khand' !important;
-  font-size: 2em !important;
-  margin: 3em 0 !important;
+  font-size: 1.75em !important;
   text-transform: uppercase !important;
-  color: #FEC522 !important;
+  color: #EEDA00 !important;
 }
 
 .main-description {
@@ -67,12 +61,8 @@ body {
   margin-top: 50px !important;
 }
 
-.menu-wrapper {
-
-}
-
 .paragraph-text {
-  font-size: 1.5em !important;
+  font-size: 1.25em !important;
 }
 
 .accordion .title {
@@ -83,6 +73,13 @@ body {
 .contacts-header {
   font-family: 'Oswald' !important;
   font-size: 2em !important;
+}
+
+.service-header {
+  font-family: 'Oswald' !important;
+  font-size: 2.5em !important;
+  color: #FEC522 !important;
+  padding-bottom: 2em;
 }
 
 .table-header {
@@ -118,6 +115,18 @@ body {
 
 .privacy-text {
   font-size: 1.15em !important;
+}
+
+.zoom {
+  transition: transform .2s;
+  /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
 }
 
 .hamburger {

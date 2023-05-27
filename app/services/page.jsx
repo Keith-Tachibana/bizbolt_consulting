@@ -10,7 +10,9 @@ import {
   Button,
   Image,
   Embed,
+  List,
   Divider,
+  Popup,
   Grid,
   Container,
   Dimmer,
@@ -193,25 +195,48 @@ export default class Services extends Component {
     };
 
     const dividerStyle = {
-      minWidth: '80vw',
+      width: '100%',
       marginBottom: '2em'
     }
 
     return (
-      <Segment.Group>
+      <>
+        <br />
+        <br />
+        <br />
+        <Header as='h3' className='main-header' textAlign='center' inverted>
+          How It's Done
+        </Header>
+        <br />
+        <br />
+        <br />
+        <Container>
+          <Grid stackable columns='equal' inverted verticalAlign='middle' padded>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src='/assets/Icons/SVGs/undraw_visual_data_re_mxxo.svg' alt='Redrawing data SVG' size='large' rounded />
+              </Grid.Column>
+              <Grid.Column width={6}>
+                <Popup position='bottom center' inverted trigger={<Button size='big' inverted color='yellow'>Whether you're a startup or an established business,</Button>} flowing hoverable>
+                  <Grid centered columns={1}>
+                    <Grid.Column textAlign='center'>
+                      <p className='paragraph-text' inverted>
+                        we're here to help you achieve your goals with customized solutions that are tailored to your individual needs and objectives.
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Popup>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
         <Segment inverted padded style={ segmentStyle }>
           <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
             <Container textAlign='center'>
-              <Header as='h3' className='main-subheader' inverted>
-                How It's Done
+              <Header as='h4' inverted className='main-subheader' textAlign='center'>
+                Press play!
               </Header>
-            </Container>
-          </Suspense>
-        </Segment>
-        <Segment inverted padded style={ segmentStyle }>
-          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
-            <Container>
-              <Divider as='h4' inverted horizontal>Watch</Divider>
+              <Icon name='arrow circle down' className='zoom' inverted size='huge'></Icon>
               <Grid stackable verticalAlign='middle' inverted padded>
                 <Grid.Row textAlign='center'>
                   <Grid.Column>
@@ -235,30 +260,66 @@ export default class Services extends Component {
                     >
                       Meet with an Expert
                     </Button>
+
                   </Grid.Column>
                 </Grid.Row>
                 <hr style={ dividerStyle }  />
               </Grid>
             </Container>
-          </Suspense>
-        </Segment>
-        <Segment inverted padded style={ segmentStyle }>
-          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
             <Container textAlign='center'>
-              <Header as='h3' className='main-header' inverted>
-                Our Services
+              <Header as='h3' inverted>
+                <p className='service-header'>Our Services</p>
               </Header>
+              <Grid columns={3} stackable divided inverted>
+                <Grid.Row>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <Image
+                          src='/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif'
+                          alt='Data server'
+                          size='tiny'
+                        />
+                        <List.Content>
+                          <List.Header as='h1'>Data / CRM</List.Header>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List inverted relaxed>
+                      <List.Item>
+                        <Image
+                          src='/assets/Icons/Gifs/970-video-conference-outline copy.gif'
+                          alt='Group of people'
+                          size='tiny'
+                        />
+                        <List.Content>
+                          <List.Header as='h1'>Revenue Teams</List.Header>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List inverted relaxed>
+                      <List.Item>
+                        <Image
+                          src='/assets/Icons/Gifs/153-bar-chart-growth-outline copy.gif'
+                          alt='Group of people'
+                          size='tiny'
+                        />
+                        <List.Content>
+                          <List.Header as='h1'>Insight &amp; Analytics</List.Header>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
             </Container>
           </Suspense>
         </Segment>
-        <Segment inverted padded style={ segmentStyle }>
-          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
-            <Container textAlign='center'>
-              <Accordion defaultActiveIndex={0} panels={rootPanels} inverted />
-            </Container>
-          </Suspense>
-        </Segment>
-      </Segment.Group>
+      </>
     );
   };
 };
