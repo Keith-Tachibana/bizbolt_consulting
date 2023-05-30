@@ -15,7 +15,8 @@ import {
   FormGroup,
   Table,
   Dimmer,
-  Loader
+  Loader,
+  Modal
 } from 'semantic-ui-react';
 
 import {
@@ -38,7 +39,9 @@ export default class Demo extends Component {
     demoCompany: '',
     demoQuestion: '',
     demoComments: '',
-    demoFile: ''
+    demoFile: '',
+    open: false,
+    setOpen: false
   };
 
   async handleSubmit(event) {
@@ -88,141 +91,141 @@ export default class Demo extends Component {
       padding: '0'
     };
 
+    const footerStyle = {
+      padding: '5em 0'
+    };
+
     return (
-      <Segment.Group>
-        <Segment inverted padded style={ segmentStyle }>
-          <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
-            <Grid container centered columns={2}>
-              <Grid.Row>
-                <Grid.Column>
-                  <Header as='h1' inverted textAlign='center' style={ segmentStyle }>
-                    Demo Form
-                  </Header>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column>
-                  <Header as='h4' inverted textAlign='center' style={ segmentStyle }>
-                    <p className='paragraph-text main-bullet1'>E-mail sent to sales@bizbolt.com</p>
-                  </Header>
-                  <Formik
-                    initialValues={ initialValues }
-                    validationSchema={ validationSchema }
-                    onSubmit={ this.handleSubmit }
-                  >
-                    <Form inverted size='large'>
-                      <Input
-                        type='text'
-                        name='demoFirstName'
-                        placeholder='First name'
-                        label='First Name:'
-                        icon='user'
-                        iconPosition='left'
-                        inverted
+      <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
+        <Grid container centered columns={2}>
+          <Grid.Row>
+            <Grid.Column>
+              <Header as='h1' inverted textAlign='center'>
+                Demo Form
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <Header as='h4' inverted textAlign='center'>
+                <p className='paragraph-text main-bullet1'>E-mail sent to sales@bizbolt.com</p>
+              </Header>
+              <Formik
+                initialValues={ initialValues }
+                validationSchema={ validationSchema }
+                onSubmit={ this.handleSubmit }
+              >
+                <Form inverted size='large'>
+                  <Input
+                    type='text'
+                    name='demoFirstName'
+                    placeholder='First name'
+                    label='First Name:'
+                    icon='user'
+                    iconPosition='left'
+                    inverted
+                    errorPrompt
+                  />
+                  <Input
+                    type='text'
+                    name='demoLastName'
+                    placeholder='Last name'
+                    label='Last Name:'
+                    icon='users'
+                    iconPosition='left'
+                    inverted
+                    errorPrompt
+                  />
+                  <Input
+                    type='email'
+                    name='demoEmail'
+                    placeholder='jane@company.com'
+                    label='Company E-mail Address:'
+                    icon='mail'
+                    iconPosition='left'
+                    inverted
+                    errorPrompt
+                  />
+                  <Input
+                    type='text'
+                    name='demoCompany'
+                    placeholder='Your company name'
+                    label='Company:'
+                    icon='briefcase'
+                    iconPosition='left'
+                    inverted
+                    errorPrompt
+                  />
+                  <FormField>
+                    <Label htmlFor='demoQuestion' style={ labelStyle }>What is your question about?</Label>
+                    <FormGroup>
+                      <Radio
+                        type='radio'
+                        name='demoQuestion'
+                        value='data'
+                        label='Data'
+                      />
+                      <Radio
+                        type='radio'
+                        name='demoQuestion'
+                        value='revenueTeams'
+                        label='Revenue Teams'
+                      />
+                      <Radio
+                        type='radio'
+                        name='demoQuestion'
+                        value='insightsAndReporting'
+                        label='Insights &amp; Reporting'
                         errorPrompt
                       />
-                      <Input
-                        type='text'
-                        name='demoLastName'
-                        placeholder='Last name'
-                        label='Last Name:'
-                        icon='users'
-                        iconPosition='left'
-                        inverted
+                      <Radio
+                        type='radio'
+                        name='demoQuestion'
+                        value='allServices'
+                        label='All Services'
                         errorPrompt
                       />
-                      <Input
-                        type='email'
-                        name='demoEmail'
-                        placeholder='jane@company.com'
-                        label='Company E-mail Address:'
-                        icon='mail'
-                        iconPosition='left'
-                        inverted
+                      <Radio
+                        type='radio'
+                        name='demoQuestion'
+                        value='generalQuestions'
+                        label='General Questions'
                         errorPrompt
                       />
-                      <Input
-                        type='text'
-                        name='demoCompany'
-                        placeholder='Your company name'
-                        label='Company:'
-                        icon='briefcase'
-                        iconPosition='left'
-                        inverted
-                        errorPrompt
-                      />
-                      <FormField>
-                        <Label htmlFor='demoQuestion' style={ labelStyle }>What is your question about?</Label>
-                        <FormGroup>
-                          <Radio
-                            type='radio'
-                            name='demoQuestion'
-                            value='data'
-                            label='Data'
-                          />
-                          <Radio
-                            type='radio'
-                            name='demoQuestion'
-                            value='revenueTeams'
-                            label='Revenue Teams'
-                          />
-                          <Radio
-                            type='radio'
-                            name='demoQuestion'
-                            value='insightsAndReporting'
-                            label='Insights &amp; Reporting'
-                            errorPrompt
-                          />
-                          <Radio
-                            type='radio'
-                            name='demoQuestion'
-                            value='allServices'
-                            label='All Services'
-                            errorPrompt
-                          />
-                          <Radio
-                            type='radio'
-                            name='demoQuestion'
-                            value='generalQuestions'
-                            label='General Questions'
-                            errorPrompt
-                          />
-                        </FormGroup>
-                      </FormField>
-                      <Label htmlFor='demoComments' style={ labelStyle }>Comments:</Label>
-                      <TextArea
-                        name='demoComments'
-                        placeholder='How can we help you?'
-                        style={{ minHeight: '100' }}
-                      />
-                      <Input
-                        type='file'
-                        name='demoFile'
-                        label='Upload attachments:'
-                      />
-                      <FormGroup>
-                        <SubmitButton color='teal' inverted size='huge'>
-                          Submit
-                        </SubmitButton>
-                        <ResetButton color='yellow' inverted size='huge'>
-                          Reset
-                        </ResetButton>
-                      </FormGroup>
-                    </Form>
-                  </Formik>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column>
-                  <Header as='h3' inverted textAlign='center'>
-                    Review our <Link href='/privacy'>privacy policy</Link>
-                  </Header>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Suspense>
-        </Segment>
-      </Segment.Group>
+                    </FormGroup>
+                  </FormField>
+                  <Label htmlFor='demoComments' style={ labelStyle }>Comments:</Label>
+                  <TextArea
+                    name='demoComments'
+                    placeholder='How can we help you?'
+                    style={{ minHeight: '100' }}
+                  />
+                  <Input
+                    type='file'
+                    name='demoFile'
+                    label='Upload attachments:'
+                  />
+                  <FormGroup>
+                    <SubmitButton color='teal' inverted size='huge'>
+                      Submit
+                    </SubmitButton>
+                    <ResetButton color='yellow' inverted size='huge'>
+                      Reset
+                    </ResetButton>
+                  </FormGroup>
+                </Form>
+              </Formik>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <Header as='h3' style={ footerStyle } inverted textAlign='center'>
+                Review our <Link href='/privacy'>privacy policy</Link>
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Suspense>
     );
   };
 };

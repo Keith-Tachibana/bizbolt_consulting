@@ -20,44 +20,59 @@ export default function Footer() {
   };
 
   return (
-    <Segment inverted vertical style={ segmentStyle }>
-      <Suspense fallback={<Dimmer active><Loader size='large'>Loading...</Loader></Dimmer>}>
-        <Container textAlign='center'>
-          <Grid columns='equal' inverted stackable>
+    <Segment inverted vertical style={segmentStyle}>
+      <Suspense
+        fallback={
+          <Dimmer active>
+            <Loader size="large">Loading...</Loader>
+          </Dimmer>
+        }
+      >
+        <Container textAlign="center">
+          <Grid columns="equal" inverted stackable>
             <Grid.Row>
               <Grid.Column>
                 <Image
                   centered
-                  as='a'
-                  href='/'
-                  src='/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png'
-                  alt='Alt logo'
-                  size='small' />
+                  as="a"
+                  href="/"
+                  src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
+                  alt="Alt logo"
+                  size="small"
+                />
               </Grid.Column>
-              <Grid.Column textAlign='center' verticalAlign='middle'>
-                <p className='paragraph-text'>&copy; {getYear} BizBolt Consulting</p>
+              <Grid.Column textAlign="center" verticalAlign="middle">
+                <p className="paragraph-text">
+                  &copy; {getYear} BizBolt Consulting
+                </p>
               </Grid.Column>
-              <Grid.Column >
-                <a href='https://www.instagram.com/bizbolt/' target='_blank'>
+              <Grid.Column>
+                <a
+                  href="https://www.instagram.com/bizbolt/"
+                  target="_blank"
+                >
                   <Icon
                     link
                     circular
                     bordered
                     inverted
-                    name='instagram'
-                    size='big'
-                    color='teal'
+                    name="instagram"
+                    size="big"
+                    color="teal"
                   />
                 </a>
-                <a href='https://www.linkedin.com/company/92924172/' target='_blank'>
+                <a
+                  href="https://www.linkedin.com/company/92924172/"
+                  target="_blank"
+                >
                   <Icon
                     link
                     circular
                     bordered
                     inverted
-                    name='linkedin'
-                    size='big'
-                    color='yellow'
+                    name="linkedin"
+                    size="big"
+                    color="yellow"
                   />
                 </a>
               </Grid.Column>

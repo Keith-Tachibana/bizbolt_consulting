@@ -1,4 +1,16 @@
-* {
+:root {
+  --main-color-yellow: #FEC522;
+  --main-color-blue: #00EDDB;
+  --secondary-color-yellow: #EEDA00;
+  --secondary-color-blue: #49B1B5;
+  --tertiary-color-yellow: #FFEE70;
+  --tertiary-color-blue: #057284;
+  --main-background-color: #000000;
+  --main-text-color: #FFFFFF;
+}
+
+html,
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -8,7 +20,7 @@
   white-space: pre !important;
   display: flex !important;
   justify-content: center !important;
-  color: #FFFFFF !important;
+  color: var(--main-text-color) !important;
   font-size: 3em !important;
   font-family: 'Khand' !important;
   margin-top: 9% !important ;
@@ -17,36 +29,47 @@
 .main-header {
   font-family: 'Oswald' !important;
   font-size: 2.5em !important;
-  color: #FEC522 !important;
+  color: var(--main-color-yellow) !important;
 }
 
 .main-subheader {
   font-family: 'Kaisei Tokumin' !important;
   font-size: 2em !important;
+  padding-bottom: 0.75em !important;
 }
 
 .main-divider {
   font-family: 'Khand' !important;
   font-size: 1.75em !important;
   text-transform: uppercase !important;
-  color: #EEDA00 !important;
+  color: var(--secondary-color-yellow) !important;
 }
 
 .main-description {
   margin-top: 1em !important;
 }
 
+.main-bullet1,
+.main-bullet2,
+.main-bullet3 {
+  margin: 1em 0;
+}
+
+.main-bullet2 {
+  margin-left: 10px;
+}
+
 .main-bullet1:hover,
 .main-bullet3:hover {
-  color: #FEC522 !important;
+  color: var(--main-color-yellow) !important;
 }
 
 .main-bullet2:hover {
-  color: #00EDDB !important;
+  color: var(--main-color-blue) !important;
 }
 
 .main-embed {
-  border: 1px #FEC522 solid !important;
+  border: 1px var(--main-color-yellow) solid !important;
 }
 
 .main-list {
@@ -58,11 +81,16 @@
 }
 
 .main-bottomButton {
-  margin-top: 50px !important;
+  margin: 0.5em 0 !important;
+}
+
+div.content.main-list > div.header.main-subheader {
+  text-decoration: underline !important;
 }
 
 .paragraph-text {
   font-size: 1.25em !important;
+  color: var(--main-text-color) !important;
 }
 
 .accordion .title {
@@ -78,7 +106,7 @@
 .service-header {
   font-family: 'Oswald' !important;
   font-size: 2.5em !important;
-  color: #FEC522 !important;
+  color: var(--main-color-yellow) !important;
   padding-bottom: 2em;
 }
 
@@ -101,20 +129,74 @@
 .privacy-subheader {
   font-family: 'Kaisei Tokumin' !important;
   font-size: 1.5em !important;
-  color: #00EDDB !important;
+  color: var(--main-color-blue) !important;
 }
 
 .privacy-subsubheader {
   font-size: 1.25em !important;
-  color: #FEC522 !important;
+  color: var(--main-color-yellow) !important;
 }
 
 .privacy-subsubsubheader {
-  color: #FFFFFF !important;
+  color: var(--main-text-color) !important;
+  font-weight: bold !important;
+  font-style: italic !important;
+  font-size: 1.15em !important;
 }
 
 .privacy-text {
   font-size: 1.15em !important;
+}
+
+div.menu > div.container > a:hover {
+  background-color: var(--secondary-color-yellow) !important;
+  color: var(--main-background-color) !important;
+}
+
+div.relaxed.list > div.item:hover > i,
+div.content.main-list > div.header.main-subheader:hover {
+  color: var(--secondary-color-yellow) !important;
+}
+
+.content ~ .title,
+.content, .active ~ .title, .active {
+  font-size: 1.25em !important;
+  line-height: 1.25em !important;
+  font-weight: initial !important;
+  color: rgb(200, 200, 200) !important;
+}
+
+.title:hover {
+  color: var(--main-color-blue) !important;
+}
+
+div#data > h2.header,
+div#revenue > h2.header,
+div#insight > h2.header,
+div.accordion > div.title,
+div.accordion > div.active.title {
+  font-size: 1.5em !important;
+  font-style: italic !important;
+}
+
+div#data > h2.header:hover,
+div#revenue > h2.header:hover,
+div#insight > h2.header:hover,
+div.accordion > div.title:hover,
+div.accordion > div.active.title:hover {
+  color: var(--main-color-blue) !important;
+}
+
+.service-image {
+  padding-top: 2em !important;
+}
+
+.button-spacing {
+  padding: 5em 0 !important;
+}
+
+.small-spacing {
+  padding: 1em 0 !important;
 }
 
 .zoom {
@@ -135,7 +217,7 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #FEC522;
+  background-color: var(--main-color-yellow);
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   position: absolute;
@@ -146,7 +228,7 @@
 }
 
 .hamburger:hover {
-  background-color: #EEDA00;
+  background-color: var(--secondary-color-yellow);
 }
 
 @media screen and (max-width: 1408px) {
@@ -163,7 +245,47 @@
 
 @media screen and (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block !important;
+  }
+
+  div.menu + div.ui {
+    display: none !important;
+    position: absolute !important;
+    /* top: 60px !important; */
+    flex-direction: column !important;
+    width: 50% !important;
+    text-align: center !important;
+    height: calc(100vh - 77 px) !important;
+    background-color: var(--main-background-color) !important;
+    border-top: 1px solid var(--main-background-color) !important;
+    color: var(--main-text-color) !important;
+  }
+
+  div.menu > div.ui > a.item {
+    text-align: center !important;
+    /* position: relative !important; */
+    /* left: 50% !important; */
+    margin: 0 auto !important;
+    color: var(--main-text-color) !important;
+    /* width: 100% !important;
+    padding: 1.5em 0 !important; */
+  }
+
+  div.menu > div.ui > a.item > * {
+    margin: 0 auto !important;
+  }
+
+  div.menu > div.ui > a.item:hover {
+    background-color: var(--secondary-color-yellow) !important;
+  }
+
+  div.menu div.ui a.item img.ui {
+    position: relative !important;
+    margin: 0 auto !important;
+  }
+
+  div.menu div.ui div.right a.ui {
+    margin: 0 auto !important;
   }
 }
 
