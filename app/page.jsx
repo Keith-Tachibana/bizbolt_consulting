@@ -305,7 +305,7 @@ export default class Home extends Component {
           <Grid stackable inverted padded divded columns={3}>
             <Grid.Row>
               <Grid.Column>
-                <Link href="/services/#data">
+                <Link href="/services/#data" rel="noopener">
                   <Header
                     as="h3"
                     inverted
@@ -321,7 +321,7 @@ export default class Home extends Component {
                 </Link>
               </Grid.Column>
               <Grid.Column>
-                <Link href="/services/#revenue">
+                <Link href="/services/#revenue" rel="noopener">
                   <Header
                     as="h3"
                     inverted
@@ -337,7 +337,7 @@ export default class Home extends Component {
                 </Link>
               </Grid.Column>
               <Grid.Column>
-                <Link href="/services/#insight">
+                <Link href="/services/#insight" rel="noopener">
                   <Header
                     as="h3"
                     inverted

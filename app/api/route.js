@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
 export async function GET() {
-  const res = await fetch('/api/route/contact', {
+  const res = await fetch('/api/route/contacts', {
     headers: {
       'Content-Type': 'application/json'
     };
