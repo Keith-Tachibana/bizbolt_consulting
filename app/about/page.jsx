@@ -74,6 +74,9 @@ export default function About() {
                   >
                     <b className="about-header">Our Reason</b>
                   </Header>
+                  <br />
+                  <br />
+                  <br />
                     <p className="paragraph-text">
                       BizBolt was founded with the belief that exceptional
                       revenue operations consultants should strive to work
