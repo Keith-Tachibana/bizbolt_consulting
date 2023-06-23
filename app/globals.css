@@ -37,6 +37,26 @@ div.menu-ul {
   justify-content: center !important;
 }
 
+.menu-container {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.menu-open {
+  display: block !important;
+}
+
+.menu-closed {
+  display: none !important;
+}
+
 .main-header {
   font-family: 'Oswald' !important;
   font-size: 2.5em !important;
