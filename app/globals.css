@@ -268,8 +268,9 @@ div.accordion > div.content.active:hover {
   .hamburger {
     display: block !important;
     position: absolute !important;
-    top: 0 !important;
-    right: 50% !important;
+    top: 10% !important;
+    right: 5% !important;
+
   }
 
   div.menu > div.menu-ul {
@@ -278,15 +279,15 @@ div.accordion > div.content.active:hover {
     flex-direction: column !important;
     /* width: 50% !important; */
     text-align: center !important;
-    height: calc(100vh - 77 px) !important;
+    /* height: calc(100vh - 77 px) !important; */
     background-color: var(--main-background-color) !important;
     /* border-top: 1px solid var(--main-text-color) !important; */
     color: var(--main-text-color) !important;
   }
 
   div.menu > div.menu-ul > a.image {
-    min-width: 100vw !important;
-    max-height: 10vw !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
   }
 
   /* div.menu > div.menu-ul > a.image > img {
@@ -325,10 +326,10 @@ div.accordion > div.content.active:hover {
     background-color: var(--secondary-color-yellow) !important;
   }
 
-  div.menu div.ui a.item img.ui {
+  /* div.menu div.ui a.item img.ui {
     position: relative !important;
     margin: 0 auto !important;
-  }
+  } */
 
   div.menu div.ui div.right a.ui {
     margin: 0 auto !important;

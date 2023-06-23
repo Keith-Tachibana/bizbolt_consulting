@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Component, Suspense } from 'react';
+import React, { Component, Suspense, useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import {
@@ -21,6 +21,8 @@ export default class MenuBar extends Component {
 
   render() {
     const { activeItem, fixed } = this.state;
+
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const segmentStyle = {
       backgroundColor: '#000000'
@@ -59,7 +61,6 @@ export default class MenuBar extends Component {
                   name="home"
                   active={activeItem === "home"}
                   onClick={this.handleItemClick}
-                  className="menu-nologo"
                 >
                   Home
                 </Menu.Item>
@@ -69,7 +70,6 @@ export default class MenuBar extends Component {
                   name="services"
                   active={activeItem === "services"}
                   onClick={this.handleItemClick}
-                  className="menu-nologo"
                 >
                   Services
                 </Menu.Item>
@@ -79,7 +79,6 @@ export default class MenuBar extends Component {
                   name="about"
                   active={activeItem === "about"}
                   onClick={this.handleItemClick}
-                  className="menu-nologo"
                 >
                   About
                 </Menu.Item>
@@ -89,7 +88,6 @@ export default class MenuBar extends Component {
                   name="contact"
                   active={activeItem === "contact"}
                   onClick={this.handleItemClick}
-                  className="menu-nologo"
                 >
                   Contact Us
                 </Menu.Item>
