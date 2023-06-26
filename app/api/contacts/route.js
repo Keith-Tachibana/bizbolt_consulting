@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
-  const res = await fetch("http://localhost/api/route/contacts", {
+  const res = await fetch("http://localhost:3002/api/route/contacts", {
     headers: {
       "Content-Type": "application/json",
     },

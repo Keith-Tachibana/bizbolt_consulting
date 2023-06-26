@@ -39,6 +39,40 @@ const upload = multer({
   storage
 });
 
+app.get("/api/contacts", (req, res, next) => {
+  const sql = `
+    SELECT * FROM "contacts"
+  `;
+  db.query(sql)
+    .then(result => {
+      if (result.rows.length === 0) {
+        res.status(401).json({
+          message: 'No contacts found.'
+        });
+      } else {
+        res.status(200).json(result.rows);
+      }
+    })
+    .catch(err => next(err));
+});
+
+app.get("/api/demo", (req, res, next) => {
+  const sql = `
+    SELECT * FROM "demo"
+  `;
+  db.query(sql)
+    .then(result => {
+      if (result.rows.length === 0) {
+        res.status(401).json({
+          message: 'No demo records found.'
+        });
+      } else {
+        res.status(200).json(result.rows);
+      }
+    })
+    .catch(err => next(err));
+});
+
 app.post("/api/contacts", (req, res, next) => {
   const values = [req.body.firstName, req.body.lastName, req.body.email, req.body.gender, req.body.question, req.body.comments];
   const sql = `
