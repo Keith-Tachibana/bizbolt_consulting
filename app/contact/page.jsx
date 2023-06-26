@@ -2,7 +2,7 @@
 
 import React, { Component, Suspense } from 'react';
 import { Formik } from 'formik';
-import * as Yup from 'Yup';
+import * as Yup from 'yup';
 
 import {
   Header,
