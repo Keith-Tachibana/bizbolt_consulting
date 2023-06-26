@@ -72,12 +72,31 @@ export default class Demo extends Component {
     };
 
     const validationSchema = Yup.object({
-      demoFirstName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
-      demoLastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
-      demoEmail: Yup.string().email('Invalid email address').required('Required'),
-      demoCompany: Yup.string().max(25, 'Must be 25 characters or less').required('Required'),
-      demoQuestion: Yup.string().oneOf(['data', 'revenueTeams', 'insightsAndReporting', 'allServices', 'generalQuestions']).required('Required'),
-      demoComments: Yup.string().max(3500, 'Must be 3,500 characters or less')
+      demoFirstName: Yup.string()
+        .min(1, "Too short")
+        .max(20, "Must be 20 characters or less")
+        .required("Required"),
+      demoLastName: Yup.string()
+        .min(1, "Too short")
+        .max(30, "Must be 30 characters or less")
+        .required("Required"),
+      demoEmail: Yup.string()
+        .email("Invalid email address")
+        .required("Required"),
+      demoCompany: Yup.string()
+        .max(25, "Must be 25 characters or less")
+        .required("Required"),
+      demoQuestion: Yup.string()
+        .oneOf([
+          "data",
+          "revenueTeams",
+          "insightsAndReporting",
+          "allServices",
+          "generalQuestions",
+        ])
+        .required("Required"),
+      demoComments: Yup.string()
+        .max(3500, "Must be 3,500 characters or less"),
     });
 
     const segmentStyle = {
