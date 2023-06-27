@@ -57,8 +57,8 @@ export default class Home extends Component {
     };
 
     const dividerStyle = {
-      width: '100%',
-      marginBottom: '2em'
+      width: "100%",
+      marginBottom: "2em",
     };
 
     const paddingStyle = {
@@ -290,7 +290,7 @@ export default class Home extends Component {
               <Header
                 as="h3"
                 className="main-header"
-                textAlign="centered"
+                textAlign="center"
                 inverted
               >
                 Check out our services
@@ -302,7 +302,7 @@ export default class Home extends Component {
         <br />
         <br />
         <Container>
-          <Grid stackable inverted padded divided columns={3}>
+          <Grid stackable inverted padded divded columns={3}>
             <Grid.Row>
               <Grid.Column>
                 <Link href="/services/#data" rel="noopener">

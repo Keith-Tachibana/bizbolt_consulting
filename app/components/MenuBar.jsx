@@ -10,6 +10,7 @@ import {
   Button,
   Segment,
   Dimmer,
+  Dropdown,
   Loader
 } from 'semantic-ui-react';
 
@@ -46,68 +47,119 @@ export default class MenuBar extends Component {
               className="menu-wrapper"
             >
               <Container text className="menu-ul">
-                <Image
-                  as="a"
-                  href="/"
-                  size="small"
-                  alt="Alt logo"
-                  src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
-                />
-                <Menu.Item
-                  as="a"
-                  href="/"
-                  name="home"
-                  active={activeItem === "home"}
-                  onClick={this.handleItemClick}
-                >
-                  Home
-                </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  href="/services"
-                  name="services"
-                  active={activeItem === "services"}
-                  onClick={this.handleItemClick}
-                >
-                  Services
-                </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  href="/about"
-                  name="about"
-                  active={activeItem === "about"}
-                  onClick={this.handleItemClick}
-                >
-                  About
-                </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  href="/contact"
-                  name="contact"
-                  active={activeItem === "contact"}
-                  onClick={this.handleItemClick}
-                >
-                  Contact Us
-                </Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as="a" href="/demo" inverted color="teal">
-                    Free Consultation
-                  </Button>
-                </Menu.Item>
-                <button className="hamburger" onClick={this.handleMenuClick}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="white"
+                <div className="desktop-menu">
+                  <Image
+                    as="a"
+                    href="/"
+                    size="small"
+                    alt="Alt logo"
+                    src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
+                  />
+                  <Menu.Item
+                    as="a"
+                    href="/"
+                    name="home"
+                    minWidth={769}
+                    active={activeItem === "home"}
+                    onClick={this.handleItemClick}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+                    Home
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    href="/services"
+                    name="services"
+                    minWidth={769}
+                    active={activeItem === "services"}
+                    onClick={this.handleItemClick}
+                  >
+                    Services
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    href="/about"
+                    name="about"
+                    minWidth={769}
+                    active={activeItem === "about"}
+                    onClick={this.handleItemClick}
+                  >
+                    About
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    href="/contact"
+                    name="contact"
+                    minWidth={769}
+                    active={activeItem === "contact"}
+                    onClick={this.handleItemClick}
+                  >
+                    Contact Us
+                  </Menu.Item>
+                  <Menu.Item position="right" minWidth={769}>
+                    <Button as="a" href="/demo" inverted color="teal">
+                      Free Consultation
+                    </Button>
+                  </Menu.Item>
+                </div>
+                <Menu.Menu
+                  className="mobile-menu"
+                  position="right"
+                  inverted
+                >
+                  <Image
+                    as="a"
+                    href="/"
+                    size="small"
+                    alt="Alt logo"
+                    floated="left"
+                    src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
+                  />
+                  <Dropdown icon="bars" size="huge">
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        as="a"
+                        href="/"
+                        name="home"
+                        active={activeItem === "home"}
+                        onClick={this.handleItemClick}
+                      >
+                        Home
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as="a"
+                        href="/services"
+                        name="services"
+                        active={activeItem === "services"}
+                        onClick={this.handleItemClick}
+                      >
+                        Services
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as="a"
+                        href="/about"
+                        name="about"
+                        active={activeItem === "about"}
+                        onClick={this.handleItemClick}
+                      >
+                        About
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as="a"
+                        href="/contact"
+                        name="contact"
+                        active={activeItem === "contact"}
+                        onClick={this.handleItemClick}
+                      >
+                        Contact
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Button as="a" href="/demo" inverted color="teal">
+                          Free Consultation
+                        </Button>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Menu.Menu>
               </Container>
             </Menu>
           </Suspense>
