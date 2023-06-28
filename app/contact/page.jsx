@@ -41,25 +41,14 @@ export default class Contact extends Component {
     file: ''
   };
 
-  async handleSubmit() {
+  handleChange = this.handleChange.bind(this);
+
+  handleSubmit() {
     // event.preventDefault();
-    try {
-      const body = this.state;
-      console.log('Contact body:', body);
-      await fetch('http://localhost:3002/api/contacts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      })
-      .then(result => console.log(result));
-    } catch (error) {
-      console.error(error);
-    };
+    values => console.log(values);
   };
 
-  async handleChange(event) {
+  handleChange(event) {
     this.setState({
       [event.target.name]: event.target.checked ?? event.target.value
     });
@@ -143,6 +132,7 @@ export default class Contact extends Component {
                 >
                   <Form inverted size="large">
                     <Input
+                      id="input-firstname"
                       type="text"
                       name="firstName"
                       placeholder="First name"
@@ -151,10 +141,11 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
-                      onChange={this.handleChange}
-                      value={firstName}
+                      // onChange={this.handleChange}
+                      // value={firstName}
                     />
                     <Input
+                      id="input-lastname"
                       type="text"
                       name="lastName"
                       placeholder="Last name"
@@ -163,8 +154,8 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
-                      onChange={this.handleChange}
-                      value={lastName}
+                      // onChange={this.handleChange}
+                      // value={lastName}
                     />
                     <FormField>
                       <Label htmlFor="gender" style={labelStyle}>
@@ -172,33 +163,40 @@ export default class Contact extends Component {
                       </Label>
                       <FormGroup inline>
                         <Radio
+                          id="radio-gender-m"
                           type="radio"
                           name="gender"
                           label="Male"
-                          checked={gender === "male"}
-                          onChange={this.handleChange}
-                          value={gender}
+                          value="male"
+                          // checked={gender === "male"}
+                          // onChange={this.handleChange}
+                          // value={gender}
                         />
                         <Radio
+                          id="radio-gender-f"
                           type="radio"
                           name="gender"
                           label="Female"
-                          checked={gender === "female"}
-                          onChange={this.handleChange}
-                          value={gender}
+                          value="female"
+                          // checked={gender === "female"}
+                          // onChange={this.handleChange}
+                          // value={gender}
                         />
                         <Radio
+                          id="radio-gender-o"
                           type="radio"
                           name="gender"
                           label="Other"
+                          value="other"
                           errorPrompt
-                          checked={gender === "other"}
-                          onChange={this.handleChange}
-                          value={gender}
+                          // checked={gender === "other"}
+                          // onChange={this.handleChange}
+                          // value={gender}
                         />
                       </FormGroup>
                     </FormField>
                     <Input
+                      id="input-email"
                       type="email"
                       name="email"
                       placeholder="john@example.com"
@@ -207,8 +205,8 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
-                      onChange={this.handleChange}
-                      value={email}
+                      // onChange={this.handleChange}
+                      // value={email}
                     />
                     {/* <Label htmlFor="country" style={labelStyle}>
                       Select your country of origin:
@@ -227,29 +225,35 @@ export default class Contact extends Component {
                       </Label>
                       <FormGroup>
                         <Radio
+                          id="radio-question-general"
                           type="radio"
                           name="question"
                           label="General questions"
-                          checked={question === "generalQuestions"}
-                          onChange={this.handleChange}
-                          value={question}
+                          value="general"
+                          // checked={question === "generalQuestions"}
+                          // onChange={this.handleChange}
+                          // value={question}
                         />
                         <Radio
+                          id="radio-question-career"
                           type="radio"
                           name="question"
                           label="Career opportunities"
-                          checked={question === "careerOpportunities"}
-                          onChange={this.handleChange}
-                          value={question}
+                          value="career"
+                          // checked={question === "careerOpportunities"}
+                          // onChange={this.handleChange}
+                          // value={question}
                         />
                         <Radio
+                          id="radio-question-partnerships"
                           type="radio"
                           name="question"
                           label="Partnerships"
+                          value="partnerships"
                           errorPrompt
-                          checked={question === "partnerships"}
-                          onChange={this.handleChange}
-                          value={question}
+                          // checked={question === "partnerships"}
+                          // onChange={this.handleChange}
+                          // value={question}
                         />
                       </FormGroup>
                     </FormField>
@@ -260,8 +264,8 @@ export default class Contact extends Component {
                       name="comments"
                       placeholder="How can we help you?"
                       style={{ minHeight: "100" }}
-                      onChange={this.handleChange}
-                      value={comments}
+                      // onChange={this.handleChange}
+                      // value={comments}
                     />
                     <Input
                       type="file"

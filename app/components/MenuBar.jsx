@@ -27,6 +27,12 @@ export default class MenuBar extends Component {
       backgroundColor: '#000000'
     };
 
+    const dropdownStyle = {
+      color: '#FFFFFF !important',
+      margin: '0 auto !important',
+      textAlign: 'center !important'
+    };
+
     return (
       <InView onChange={this.toggleFixedMenu}>
         <Segment className="menu-segment" inverted style={segmentStyle}>
@@ -59,7 +65,6 @@ export default class MenuBar extends Component {
                     as="a"
                     href="/"
                     name="home"
-                    minWidth={769}
                     active={activeItem === "home"}
                     onClick={this.handleItemClick}
                   >
@@ -69,7 +74,6 @@ export default class MenuBar extends Component {
                     as="a"
                     href="/services"
                     name="services"
-                    minWidth={769}
                     active={activeItem === "services"}
                     onClick={this.handleItemClick}
                   >
@@ -79,7 +83,6 @@ export default class MenuBar extends Component {
                     as="a"
                     href="/about"
                     name="about"
-                    minWidth={769}
                     active={activeItem === "about"}
                     onClick={this.handleItemClick}
                   >
@@ -89,23 +92,18 @@ export default class MenuBar extends Component {
                     as="a"
                     href="/contact"
                     name="contact"
-                    minWidth={769}
                     active={activeItem === "contact"}
                     onClick={this.handleItemClick}
                   >
                     Contact Us
                   </Menu.Item>
-                  <Menu.Item position="right" minWidth={769}>
+                  <Menu.Item position="right">
                     <Button as="a" href="/demo" inverted color="teal">
                       Free Consultation
                     </Button>
                   </Menu.Item>
                 </div>
-                <Menu.Menu
-                  className="mobile-menu"
-                  position="right"
-                  inverted
-                >
+                <Menu.Menu className="mobile-menu" position="right" inverted>
                   <Image
                     as="a"
                     href="/"
@@ -114,7 +112,7 @@ export default class MenuBar extends Component {
                     floated="left"
                     src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
                   />
-                  <Dropdown icon="bars" size="huge">
+                  <Dropdown icon="bars" size="huge" floated="right">
                     <Dropdown.Menu>
                       <Dropdown.Item
                         as="a"
@@ -122,6 +120,7 @@ export default class MenuBar extends Component {
                         name="home"
                         active={activeItem === "home"}
                         onClick={this.handleItemClick}
+                        style={dropdownStyle}
                       >
                         Home
                       </Dropdown.Item>
@@ -131,6 +130,7 @@ export default class MenuBar extends Component {
                         name="services"
                         active={activeItem === "services"}
                         onClick={this.handleItemClick}
+                        style={dropdownStyle}
                       >
                         Services
                       </Dropdown.Item>
@@ -140,6 +140,7 @@ export default class MenuBar extends Component {
                         name="about"
                         active={activeItem === "about"}
                         onClick={this.handleItemClick}
+                        style={dropdownStyle}
                       >
                         About
                       </Dropdown.Item>
@@ -149,6 +150,7 @@ export default class MenuBar extends Component {
                         name="contact"
                         active={activeItem === "contact"}
                         onClick={this.handleItemClick}
+                        style={dropdownStyle}
                       >
                         Contact
                       </Dropdown.Item>

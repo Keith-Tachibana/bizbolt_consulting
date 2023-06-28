@@ -190,6 +190,14 @@ div.content > h2.header {
   font-style: italic !important;
 }
 
+div.content > h2.header:hover {
+  color: var(--main-color-blue) !important;
+}
+
+div.content > p.paragraph-text:hover {
+  color: var(--main-color-yellow) !important;
+}
+
 div#data > p.paragraph-text:hover,
 div#revenue > p.paragraph-text:hover,
 div#insight > p.paragraph-text:hover {
@@ -268,6 +276,7 @@ div.accordion > div.content.active:hover {
     flex-direction: column !important;
     /* width: 50% !important; */
     text-align: center !important;
+    justify-content: space-between !important;
     /* height: calc(100vh - 77 px) !important; */
     background-color: var(--main-background-color) !important;
     /* border-top: 1px solid var(--main-text-color) !important; */
@@ -278,11 +287,6 @@ div.accordion > div.content.active:hover {
     object-fit: contain !important;
     margin: 0 auto !important;
   }
-
-  /* div.menu > div.menu-ul > a.image > img {
-    position: relative !important;
-    float: left !important;
-  } */
 
   div.menu > div.menu-ul > a.item {
     display: block !important;
@@ -309,9 +313,10 @@ div.accordion > div.content.active:hover {
 
   div.menu > div.ui > a.item > * {
     margin: 0 auto !important;
+    color: var(--main-text-color) !important;
   }
 
-  div.menu > div.ui > a.item:hover {
+  div.menu > div.ui > div.desktop-menu > a.item:hover {
     background-color: var(--secondary-color-yellow) !important;
   }
 
@@ -322,6 +327,48 @@ div.accordion > div.content.active:hover {
 
   div.menu div.ui div.right a.ui {
     margin: 0 auto !important;
+  }
+
+  div[role="listbox"] > div.menu.transition.visible {
+    /* display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important; */
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    color: var(--main-text-color) !important;
+  }
+
+  div[role="listbox"] div.menu.transition.visible a[role="option"] > * {
+    color: var(--main-text-color) !important;
+    font-size: 0.75em !important;
+    text-align: center !important;
+  }
+
+  div[role="listbox"] {
+    float: right !important;
+    padding: 1em 0 0 2em !important;
+  }
+
+  a[role="option"] {
+    color: var(--main-text-color) !important;
+  }
+
+  div.desktop-menu a[role="option"]:hover,
+  div.mobile-menu a[role="option"]:hover {
+    color: var(--main-color-yellow) !important;
+  }
+
+  div.eight.wide.column > img.ui.large.rounded {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  div.six.wide.column > button.yellow.huge {
+    margin: 0 auto !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
