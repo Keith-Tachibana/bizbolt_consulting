@@ -302,7 +302,7 @@ export default class Home extends Component {
         <br />
         <br />
         <Container>
-          <Grid stackable inverted padded divded columns={3}>
+          <Grid stackable inverted padded divided columns={3}>
             <Grid.Row>
               <Grid.Column>
                 <Link href="/services/#data" rel="noopener">
