@@ -30,32 +30,32 @@ import {
 } from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    gender: '',
-    country: '',
-    question: '',
-    comments: '',
-    file: ''
-  };
+  // state = {
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   gender: '',
+  //   country: '',
+  //   question: '',
+  //   comments: '',
+  //   file: ''
+  // };
 
-  handleChange = this.handleChange.bind(this);
+  // handleChange = this.handleChange.bind(this);
 
-  handleSubmit() {
+  handleSubmit(event) {
     // event.preventDefault();
-    values => console.log(values);
+    console.log(event.target.values);
   };
 
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.checked ?? event.target.value
-    });
-  };
+  // handleChange(event) {
+  //   this.setState({
+  //     [event.target.name]: event.target.checked ?? event.target.value
+  //   }, (event) => console.log('Name, Value:', event.target.name, event.target.value));
+  // };
 
   render() {
-    const { firstName, lastName, email, gender, question, comments } = this.state;
+    // const { firstName, lastName, email, gender, question, comments } = this.state;
 
     // const countryOptions = [
     //   { name: 'US', value: 'United States' }
@@ -229,7 +229,7 @@ export default class Contact extends Component {
                           type="radio"
                           name="question"
                           label="General questions"
-                          value="general"
+                          value="generalQuestions"
                           // checked={question === "generalQuestions"}
                           // onChange={this.handleChange}
                           // value={question}
@@ -239,7 +239,7 @@ export default class Contact extends Component {
                           type="radio"
                           name="question"
                           label="Career opportunities"
-                          value="career"
+                          value="careerOpportunities"
                           // checked={question === "careerOpportunities"}
                           // onChange={this.handleChange}
                           // value={question}
@@ -261,6 +261,7 @@ export default class Contact extends Component {
                       Comments:
                     </Label>
                     <TextArea
+                      id="comments"
                       name="comments"
                       placeholder="How can we help you?"
                       style={{ minHeight: "100" }}
@@ -268,6 +269,7 @@ export default class Contact extends Component {
                       // value={comments}
                     />
                     <Input
+                      id="file"
                       type="file"
                       name="file"
                       label="Upload attachments:"
@@ -280,6 +282,7 @@ export default class Contact extends Component {
                         Reset
                       </ResetButton>
                     </FormGroup>
+                    <FormikDebug />
                   </Form>
                 </Formik>
               </Grid.Column>
