@@ -1,5 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import { Khand, Oswald, Kaisei_Tokumin, Bitter } from 'next/font/google';
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       <body className={khand.className, oswald.className, kaisei.className, bitter.className}>
         <MenuBar />
         {children}
+        <Analytics />
         <Footer />
         <video autoPlay muted loop className='video-bg'>
           <source src='/assets/AI_Videos/thunder.mp4' />

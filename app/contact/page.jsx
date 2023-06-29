@@ -43,9 +43,8 @@ export default class Contact extends Component {
 
   // handleChange = this.handleChange.bind(this);
 
-  handleSubmit(event) {
-    // event.preventDefault();
-    console.log(event.target.values);
+  async handleSubmit(values, { setSubmitting }) {
+    const res = await fetch(`https://bizbolt-consulting.vercel.app/api/contacts`);
   };
 
   // handleChange(event) {
@@ -65,8 +64,7 @@ export default class Contact extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      gender: '',
-      // country: '',
+      country: '',
       question: '',
       comments: '',
       file: ''
@@ -76,8 +74,8 @@ export default class Contact extends Component {
       firstName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
       lastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      gender: Yup.string().oneOf(['male', 'female', 'other']).required('Required'),
-      // country: Yup.string().oneOf(countryOptions.map(country => country.value)),
+      // gender: Yup.string().oneOf(['male', 'female', 'other']).required('Required'),
+      country: Yup.string().oneOf(countryOptions.map(country => country.value)),
       question: Yup.string().oneOf(['generalQuestions', 'careerOpportunities', 'partnerships']).required('Required'),
       comments: Yup.string().max(3000, 'Must be 3,000 characters or less')
     });
