@@ -5,7 +5,7 @@ export default async function handler(request, response) {
 
   // try {
   //   await client.sql`CREATE TABLE Demo (id serial, demoFirstName text, demoLastName text, demoEmail text unique, demoCompany text, demoQuestion text, demoComments text null, demoFile text null, createdAt timestamp default now() );`;
-  //   const data = [
+  //   const data = [,w z
   //     "Colin",
   //     "Gauthier",
   //     "colin@bizbolt.com",

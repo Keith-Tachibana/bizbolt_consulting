@@ -46,7 +46,7 @@ export default class MenuBar extends Component {
             <Menu
               fixed={fixed ? "top" : null}
               inverted
-              stackable="true"
+              stackable
               size="small"
               borderless
               style={segmentStyle}

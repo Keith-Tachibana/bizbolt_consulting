@@ -225,6 +225,10 @@ div.accordion > div.content.active:hover {
   color: var(--main-color-yellow) !important;
 }
 
+div[role="option"] {
+  color: var(--main-background-color) !important;
+}
+
 .service-image {
   padding-top: 2em !important;
 }

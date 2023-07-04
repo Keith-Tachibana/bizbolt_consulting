@@ -3,6 +3,7 @@
 import React, { Component, Suspense } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import countryOptions from './countries';
 
 import {
   Header,
@@ -30,21 +31,58 @@ import {
 } from 'formik-semantic-ui-react';
 
 export default class Contact extends Component {
-  // state = {
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   gender: '',
-  //   country: '',
-  //   question: '',
-  //   comments: '',
-  //   file: ''
-  // };
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    country: '',
+    question: '',
+    comments: '',
+    file: '',
+    submittedFirstName: '',
+    submittedLastName: '',
+    submittedEmail: '',
+    submittedCountry: '',
+    submittedQuestion: '',
+    submittedComments: '',
+    submittedFile: ''
+  };
 
   // handleChange = this.handleChange.bind(this);
 
-  async handleSubmit(values, { setSubmitting }) {
-    const res = await fetch(`https://bizbolt-consulting.vercel.app/api/contacts`);
+  async handleSubmit() {
+    const { firstName, lastName, email, country, question, comments, file } = this.state;
+    this.setState({
+      submittedFirstName: firstName,
+      submittedLastName: lastName,
+      submittedEmail: email,
+      submittedCountry: country,
+      submittedQuestion: question,
+      submittedComments: comments,
+      submittedFile: file
+    });
+    const data = {
+      submittedFirstName,
+      submittedLastName,
+      submittedEmail,
+      submittedCountry,
+      submittedQuestion,
+      submittedComments,
+      submittedFile
+    };
+    try {
+      const res = await fetch(`https://bizbolt-consulting.vercel.app/api/contacts`, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const result = await res.json();
+      console.log('Result:', result);
+    } catch(error) {
+      console.error(error.message);
+    }
   };
 
   // handleChange(event) {
@@ -155,7 +193,7 @@ export default class Contact extends Component {
                       // onChange={this.handleChange}
                       // value={lastName}
                     />
-                    <FormField>
+                    {/* <FormField>
                       <Label htmlFor="gender" style={labelStyle}>
                         Gender:
                       </Label>
@@ -192,7 +230,7 @@ export default class Contact extends Component {
                           // value={gender}
                         />
                       </FormGroup>
-                    </FormField>
+                    </FormField> */}
                     <Input
                       id="input-email"
                       type="email"
@@ -206,17 +244,18 @@ export default class Contact extends Component {
                       // onChange={this.handleChange}
                       // value={email}
                     />
-                    {/* <Label htmlFor="country" style={labelStyle}>
+                    <Label htmlFor="select-country" style={labelStyle}>
                       Select your country of origin:
                     </Label>
                     <Select
+                      id="select-country"
                       name="country"
                       clearable
                       inverted
                       placeholder="Select your country"
                       options={countryOptions}
                       errorPrompt
-                    /> */}
+                    />
                     <FormField>
                       <Label htmlFor="question" style={labelStyle}>
                         What is your question about?
