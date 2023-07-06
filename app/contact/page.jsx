@@ -113,7 +113,7 @@ export default class Contact extends Component {
       lastName: Yup.string().max(30, 'Must be 30 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
       // gender: Yup.string().oneOf(['male', 'female', 'other']).required('Required'),
-      country: Yup.string().oneOf(countryOptions.map(country => country.value)),
+      country: Yup.string().oneOf(countryOptions.map(country => country.value)).required('Required'),
       question: Yup.string().oneOf(['generalQuestions', 'careerOpportunities', 'partnerships']).required('Required'),
       comments: Yup.string().max(3000, 'Must be 3,000 characters or less')
     });
@@ -177,6 +177,9 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
+                      errorConfig={{
+                        pointing: "right"
+                      }}
                       // onChange={this.handleChange}
                       // value={firstName}
                     />
@@ -190,6 +193,9 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
+                      errorConfig={{
+                        pointing: "right"
+                      }}
                       // onChange={this.handleChange}
                       // value={lastName}
                     />
@@ -241,6 +247,9 @@ export default class Contact extends Component {
                       iconPosition="left"
                       inverted
                       errorPrompt
+                      errorConfig={{
+                        pointing: "right"
+                      }}
                       // onChange={this.handleChange}
                       // value={email}
                     />
@@ -255,12 +264,15 @@ export default class Contact extends Component {
                       placeholder="Select your country"
                       options={countryOptions}
                       errorPrompt
+                      errorConfig={{
+                        pointing: "right"
+                      }}
                     />
                     <FormField>
                       <Label htmlFor="question" style={labelStyle}>
                         What is your question about?
                       </Label>
-                      <FormGroup>
+                      <FormGroup inline>
                         <Radio
                           id="radio-question-general"
                           type="radio"
@@ -319,7 +331,7 @@ export default class Contact extends Component {
                         Reset
                       </ResetButton>
                     </FormGroup>
-                    <FormikDebug />
+                    {/* <FormikDebug style={{ color: "#FFFFFF !important" }} /> */}
                   </Form>
                 </Formik>
               </Grid.Column>

@@ -158,7 +158,7 @@ export default class Home extends Component {
         <br />
         <br />
         <br />
-        <Container textAlign='center'>
+        <Container textAlign="center">
           <Header as="h3" inverted className="main-divider" textAlign="center">
             Press play!
           </Header>
@@ -178,11 +178,16 @@ export default class Home extends Component {
             <Grid.Row textAlign="center">
               <Grid.Column>
                 <Container className="main-embed">
-                  <Embed
-                    id="cxmrVD45aR4"
-                    placeholder="/assets/Images/Video_Design/people-collaborating-with-tech-black.png"
-                    source="youtube"
-                  />
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/cxmrVD45aR4"
+                    title="BizBolt Consulting"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  >
+                  </iframe>
                 </Container>
               </Grid.Column>
             </Grid.Row>
