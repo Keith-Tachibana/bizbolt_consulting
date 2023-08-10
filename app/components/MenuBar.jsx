@@ -57,7 +57,7 @@ export default class MenuBar extends Component {
                   <Image
                     as="a"
                     href="/"
-                    size="small"
+                    size="medium"
                     alt="Alt logo"
                     src="/assets/Logos/Logos_Full_Name/Best_Logo_Wide_Name_No_Background.png"
                   />

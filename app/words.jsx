@@ -1,5 +1,5 @@
 const words = [
-  'Optimization', 'Automation', 'Transformation'
+  'Optimization,\n Automation,\n Transformation\n'
 ];
 
 export default words;

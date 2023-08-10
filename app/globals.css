@@ -14,6 +14,8 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  z-index: -1000 !important;
+  background-color: var(--main-background-color) !important;
 }
 
 .typed-span {
@@ -21,9 +23,10 @@ body {
   display: flex !important;
   justify-content: center !important;
   color: var(--main-text-color) !important;
-  font-size: 3em !important;
+  font-size: 4em !important;
   font-family: 'Khand' !important;
   margin-top: 9% !important ;
+  line-height: 1.25em !important;
 }
 
 div.menu-segment {
@@ -38,25 +41,29 @@ div.menu-ul {
   justify-content: center !important;
 }
 
+.desktop-menu .item {
+  font-size: 1.5em !important;
+}
+
 .mobile-menu {
   display: none !important;
 }
 
 .main-header {
   font-family: 'Oswald' !important;
-  font-size: 2.5em !important;
+  font-size: 4em !important;
   color: var(--main-color-yellow) !important;
 }
 
 .main-subheader {
   font-family: 'Kaisei Tokumin' !important;
-  font-size: 2em !important;
+  font-size: 3em !important;
   padding-bottom: 0.75em !important;
 }
 
 .main-divider {
   font-family: 'Khand' !important;
-  font-size: 1.75em !important;
+  font-size: 2em !important;
   text-transform: uppercase !important;
   color: var(--secondary-color-yellow) !important;
 }
@@ -84,9 +91,9 @@ div.menu-ul {
   color: var(--main-color-blue) !important;
 }
 
-.main-embed {
+/* .main-embed {
   border: 1px var(--main-color-yellow) solid !important;
-}
+} */
 
 .main-list {
   padding-left: 3em !important;
@@ -105,13 +112,13 @@ div.content.main-list > div.header.main-subheader {
 }
 
 .paragraph-text {
-  font-size: 1.25em !important;
+  font-size: 1.5em !important;
   color: var(--main-text-color) !important;
 }
 
 .accordion .title {
   font-family: 'Kaisei Tokumin' !important;
-  font-size: 1.25em !important;
+  font-size: 1.75em !important;
 }
 
 .contacts-header {
@@ -392,6 +399,6 @@ div[role="option"] {
   min-height: 100% !important;
   width: auto !important;
   height: auto !important;
-  z-index: -100 !important;
+  z-index: -1 !important;
   transform: translateX(-50%) translateY(-50%) !important;
 }

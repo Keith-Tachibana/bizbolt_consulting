@@ -169,11 +169,16 @@ export default class Services extends Component {
               <Grid.Row textAlign="center">
                 <Grid.Column>
                   <Container className="main-embed">
-                    <Embed
-                      id="swPEh1hbc8g"
-                      placeholder="/assets/Images/Video_Design/people-collaborating-with-tech-black.png"
-                      source="youtube"
-                    />
+                    <iframe
+                      width="873"
+                      height="491"
+                      src="https://www.youtube.com/embed/swPEh1hbc8g"
+                      title="Revenue Operations Best Practices with Bizbolt"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    >
+                    </iframe>
                   </Container>
                 </Grid.Column>
               </Grid.Row>
@@ -191,27 +196,40 @@ export default class Services extends Component {
             <Header as="h3" inverted>
               <p className="service-header">Our Services</p>
             </Header>
-            <Grid columns={3} stackable divided inverted>
-              <Grid.Row>
+            <Grid stackable divided="vertically" inverted>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
+                    alt="Data server"
+                    size="tiny"
+                  />
+                </Grid.Column>
                 <Grid.Column>
                   <List celled inverted relaxed>
                     <List.Item>
-                      <Image
-                        src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
-                        alt="Data server"
-                        size="tiny"
-                      />
                       <List.Content>
                         <a id="data">
                           <List.Header as="h1">Data / CRM</List.Header>
                         </a>
-                        <hr style={dividerStyle} />
-                        <Image
-                          src="/assets/Icons/Gifs/1021-rules-outline (1).gif"
-                          alt="Rules outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+                <hr style={dividerStyle} />
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/1021-rules-outline (1).gif"
+                    alt="Rules outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Data Hygiene:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           Data hygiene is the process of cleaning and organizing
@@ -222,12 +240,24 @@ export default class Services extends Component {
                           decision-making, improved customer experiences, and
                           increased efficiency in your operations.
                         </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/1683-recycling-outline copy.gif"
-                          alt="Recycling outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/1683-recycling-outline copy.gif"
+                    alt="Recycling outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Data Automation:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           Data automation streamlines your data processes by
@@ -239,12 +269,24 @@ export default class Services extends Component {
                           efficiency, and free up time for your team to focus on
                           more strategic tasks.
                         </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif"
-                          alt="Magnifying glass outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif"
+                    alt="Magnifying glass outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Full CRM Audit:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           A CRM audit is a comprehensive review of your CRM
@@ -256,12 +298,24 @@ export default class Services extends Component {
                           audit can help you make data-driven decisions to
                           improve your sales and marketing efforts.
                         </List.Description>
-                        <Image
-                          src="/assets/Icons/Website_LordIcons/WY_DATA-load-balancer-outline.gif"
-                          alt="Load balancer outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Website_LordIcons/WY_DATA-load-balancer-outline.gif"
+                    alt="Load balancer outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">CRM Integrations:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           CRM integrations involve connecting your CRM system
@@ -273,12 +327,24 @@ export default class Services extends Component {
                           and provide a better customer experience across
                           multiple channels.
                         </List.Description>
-                        <Image
-                          src="/assets/Icons/Website_LordIcons/WY_DATA-sd-card-outline.gif"
-                          alt="SD card outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Website_LordIcons/WY_DATA-sd-card-outline.gif"
+                    alt="SD card outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Data Migration:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           Data migration involves transferring data from one
@@ -294,25 +360,41 @@ export default class Services extends Component {
                     </List.Item>
                   </List>
                 </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
                 <Grid.Column>
-                  <List inverted relaxed>
+                  <Image
+                    src="/assets/Icons/Gifs/970-video-conference-outline copy.gif"
+                    alt="Group of people"
+                    size="tiny"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
                     <List.Item>
-                      <Image
-                        src="/assets/Icons/Gifs/970-video-conference-outline copy.gif"
-                        alt="Group of people"
-                        size="tiny"
-                      />
                       <List.Content>
                         <a id="revenue">
                           <List.Header as="h1">Revenue Teams</List.Header>
                         </a>
-                        <hr style={dividerStyle} />
-                        <Image
-                          src="/assets/Icons/Gifs/950-attract-customers-outline copy.gif"
-                          alt="Attract customers outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <hr style={dividerStyle} />
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/950-attract-customers-outline copy.gif"
+                    alt="Attract customers outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Team Synergy:</List.Header>
                         <List.Description as="p" className="paragraph-text">
                           By improving communication and collaboration between
@@ -322,12 +404,24 @@ export default class Services extends Component {
                           and implement processes and technologies to improve
                           cross-team collaboration and drive revenue growth.
                         </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/412-gift-outline.gif"
-                          alt="Gift outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/412-gift-outline.gif"
+                    alt="Gift outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Sales Teams:</List.Header>
                         <Accordion
                           defaultActiveIndex={[0, 2]}
@@ -336,13 +430,25 @@ export default class Services extends Component {
                           inverted
                           panels={level1Panels}
                         />
-                        <Image
-                          src="/assets/Icons/Gifs/27-globe-outline.gif"
-                          alt="Globe outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                          className="service-image"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/27-globe-outline.gif"
+                    alt="Globe outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                    className="service-image"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">Marketing Teams:</List.Header>
                         <Accordion
                           defaultActiveIndex={[0, 2]}
@@ -351,13 +457,25 @@ export default class Services extends Component {
                           inverted
                           panels={level2Panels}
                         />
-                        <Image
-                          src="/assets/Icons/Gifs/1092-applause-outline copy.gif"
-                          alt="Applause outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                          className="service-image"
-                        />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Image
+                    src="/assets/Icons/Gifs/1092-applause-outline copy.gif"
+                    alt="Applause outline"
+                    size="tiny"
+                    verticalAlign="middle"
+                    className="service-image"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
+                    <List.Item>
+                      <List.Content>
                         <List.Header as="h2">
                           Customer Success Teams:
                         </List.Header>
@@ -372,21 +490,30 @@ export default class Services extends Component {
                     </List.Item>
                   </List>
                 </Grid.Column>
+              </Grid.Row>
+              <Grid.Row columns={2}>
                 <Grid.Column>
-                  <List inverted relaxed>
+                  <Image
+                    src="/assets/Icons/Gifs/153-bar-chart-growth-outline copy.gif"
+                    alt="Group of people"
+                    size="tiny"
+                  />
+                </Grid.Column>
+                <Grid.Column>
+                  <List celled inverted relaxed>
                     <List.Item>
-                      <Image
-                        src="/assets/Icons/Gifs/153-bar-chart-growth-outline copy.gif"
-                        alt="Group of people"
-                        size="tiny"
-                      />
                       <List.Content>
                         <a id="insight">
                           <List.Header as="h1">
                             Insight &amp; Analytics
                           </List.Header>
                         </a>
-                        <hr style={dividerStyle} />
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+              <hr style={dividerStyle} />
                         <Image
                           src="/assets/Icons/Gifs/56-document-outline copy.gif"
                           alt="Document outline"
@@ -448,13 +575,12 @@ export default class Services extends Component {
                           experience that improves customer satisfaction and
                           drives revenue growth.
                         </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
+            </Grid.Row>
             </Grid>
-          </Container>
+            </Container>
+
+
+
         </Suspense>
         <Grid centered stackable inverted>
           <Container>
