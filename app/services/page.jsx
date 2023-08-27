@@ -177,8 +177,7 @@ export default class Services extends Component {
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowfullscreen
-                    >
-                    </iframe>
+                    ></iframe>
                   </Container>
                 </Grid.Column>
               </Grid.Row>
@@ -196,391 +195,383 @@ export default class Services extends Component {
             <Header as="h3" inverted>
               <p className="service-header">Our Services</p>
             </Header>
-            <Grid stackable divided="vertically" inverted>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
-                    alt="Data server"
-                    size="tiny"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <a id="data">
-                          <List.Header as="h1">Data / CRM</List.Header>
-                        </a>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
+            <Grid stackable inverted>
+              <Grid.Row>
+                <Image
+                  src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
+                  alt="Data server"
+                  size="medium"
+                />
+                <a id="data" style={{ display: "flex", alignItems: "center", color: "var(--secondary-color-yellow)", fontSize: "5em !important" }}>
+                  <h1>Data / CRM</h1>
+                </a>
+              </Grid.Row>
+              <Grid.Row>
                 <hr style={dividerStyle} />
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/1021-rules-outline (1).gif"
-                    alt="Rules outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Data Hygiene:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Data hygiene is the process of cleaning and organizing
-                          your data to ensure accuracy and completeness. It
-                          involves identifying and correcting errors,
-                          duplications, and inconsistencies in your data. A
-                          clean and organized database can lead to better
-                          decision-making, improved customer experiences, and
-                          increased efficiency in your operations.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/1683-recycling-outline copy.gif"
-                    alt="Recycling outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Data Automation:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Data automation streamlines your data processes by
-                          using software and technology to reduce errors, save
-                          time, and increase productivity. This includes
-                          automating data entry, data cleaning, and data
-                          analysis tasks. By reducing the need for manual work,
-                          data automation can improve accuracy, increase
-                          efficiency, and free up time for your team to focus on
-                          more strategic tasks.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif"
-                    alt="Magnifying glass outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Full CRM Audit:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          A CRM audit is a comprehensive review of your CRM
-                          system to identify areas for improvement, optimize
-                          performance, and increase ROI. It includes evaluating
-                          your data quality, lead management, sales processes,
-                          and customer engagement. By uncovering areas of
-                          inefficiency or opportunities for improvement, a CRM
-                          audit can help you make data-driven decisions to
-                          improve your sales and marketing efforts.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Website_LordIcons/WY_DATA-load-balancer-outline.gif"
-                    alt="Load balancer outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">CRM Integrations:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          CRM integrations involve connecting your CRM system
-                          with other tools and platforms to create a seamless
-                          data flow. This includes integrating your CRM with
-                          marketing automation software, customer service tools,
-                          or e-commerce platforms. By integrating your systems,
-                          you can improve data accuracy, streamline processes,
-                          and provide a better customer experience across
-                          multiple channels.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Website_LordIcons/WY_DATA-sd-card-outline.gif"
-                    alt="SD card outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Data Migration:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Data migration involves transferring data from one
-                          system to another while ensuring accuracy and
-                          security. This includes mapping out data fields,
-                          testing data transfers, and verifying data accuracy.
-                          By successfully migrating your data, you can minimize
-                          downtime and disruptions, avoid data loss or
-                          corruption, and ensure your team has access to the
-                          information they need to do their jobs effectively.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/970-video-conference-outline copy.gif"
-                    alt="Group of people"
-                    size="tiny"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <a id="revenue">
-                          <List.Header as="h1">Revenue Teams</List.Header>
-                        </a>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <hr style={dividerStyle} />
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/950-attract-customers-outline copy.gif"
-                    alt="Attract customers outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Team Synergy:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          By improving communication and collaboration between
-                          your sales, marketing, and customer service teams, you
-                          can increase productivity, reduce churn, and improve
-                          customer satisfaction. Our team can help you identify
-                          and implement processes and technologies to improve
-                          cross-team collaboration and drive revenue growth.
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/412-gift-outline.gif"
-                    alt="Gift outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Sales Teams:</List.Header>
-                        <Accordion
-                          defaultActiveIndex={[0, 2]}
-                          exclusive={false}
-                          fluid
-                          inverted
-                          panels={level1Panels}
-                        />
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/27-globe-outline.gif"
-                    alt="Globe outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                    className="service-image"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">Marketing Teams:</List.Header>
-                        <Accordion
-                          defaultActiveIndex={[0, 2]}
-                          exclusive={false}
-                          fluid
-                          inverted
-                          panels={level2Panels}
-                        />
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/1092-applause-outline copy.gif"
-                    alt="Applause outline"
-                    size="tiny"
-                    verticalAlign="middle"
-                    className="service-image"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header as="h2">
-                          Customer Success Teams:
-                        </List.Header>
-                        <Accordion
-                          defaultActiveIndex={[0, 2]}
-                          exclusive={false}
-                          fluid
-                          inverted
-                          panels={level3Panels}
-                        />
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Image
-                    src="/assets/Icons/Gifs/153-bar-chart-growth-outline copy.gif"
-                    alt="Group of people"
-                    size="tiny"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <List celled inverted relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <a id="insight">
-                          <List.Header as="h1">
-                            Insight &amp; Analytics
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/1021-rules-outline (1).gif"
+                      alt="Rules outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Data Hygiene:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            Data hygiene is the process of cleaning and
+                            organizing your data to ensure accuracy and
+                            completeness. It involves identifying and correcting
+                            errors, duplications, and inconsistencies in your
+                            data. A clean and organized database can lead to
+                            better decision-making, improved customer
+                            experiences, and increased efficiency in your
+                            operations.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/1683-recycling-outline copy.gif"
+                      alt="Recycling outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Data Automation:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            Data automation streamlines your data processes by
+                            using software and technology to reduce errors, save
+                            time, and increase productivity. This includes
+                            automating data entry, data cleaning, and data
+                            analysis tasks. By reducing the need for manual
+                            work, data automation can improve accuracy, increase
+                            efficiency, and free up time for your team to focus
+                            on more strategic tasks.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/19-magnifier-zoom-search-outline.gif"
+                      alt="Magnifying glass outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Full CRM Audit:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            A CRM audit is a comprehensive review of your CRM
+                            system to identify areas for improvement, optimize
+                            performance, and increase ROI. It includes
+                            evaluating your data quality, lead management, sales
+                            processes, and customer engagement. By uncovering
+                            areas of inefficiency or opportunities for
+                            improvement, a CRM audit can help you make
+                            data-driven decisions to improve your sales and
+                            marketing efforts.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Website_LordIcons/WY_DATA-load-balancer-outline.gif"
+                      alt="Load balancer outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">CRM Integrations:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            CRM integrations involve connecting your CRM system
+                            with other tools and platforms to create a seamless
+                            data flow. This includes integrating your CRM with
+                            marketing automation software, customer service
+                            tools, or e-commerce platforms. By integrating your
+                            systems, you can improve data accuracy, streamline
+                            processes, and provide a better customer experience
+                            across multiple channels.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Website_LordIcons/WY_DATA-sd-card-outline.gif"
+                      alt="SD card outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Data Migration:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            Data migration involves transferring data from one
+                            system to another while ensuring accuracy and
+                            security. This includes mapping out data fields,
+                            testing data transfers, and verifying data accuracy.
+                            By successfully migrating your data, you can
+                            minimize downtime and disruptions, avoid data loss
+                            or corruption, and ensure your team has access to
+                            the information they need to do their jobs
+                            effectively.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/970-video-conference-outline copy.gif"
+                      alt="Group of people"
+                      size="tiny"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <a id="revenue">
+                            <List.Header as="h1">Revenue Teams</List.Header>
+                          </a>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <hr style={dividerStyle} />
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/950-attract-customers-outline copy.gif"
+                      alt="Attract customers outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Team Synergy:</List.Header>
+                          <List.Description as="p" className="paragraph-text">
+                            By improving communication and collaboration between
+                            your sales, marketing, and customer service teams,
+                            you can increase productivity, reduce churn, and
+                            improve customer satisfaction. Our team can help you
+                            identify and implement processes and technologies to
+                            improve cross-team collaboration and drive revenue
+                            growth.
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/412-gift-outline.gif"
+                      alt="Gift outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Sales Teams:</List.Header>
+                          <Accordion
+                            defaultActiveIndex={[0, 2]}
+                            exclusive={false}
+                            fluid
+                            inverted
+                            panels={level1Panels}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/27-globe-outline.gif"
+                      alt="Globe outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                      className="service-image"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">Marketing Teams:</List.Header>
+                          <Accordion
+                            defaultActiveIndex={[0, 2]}
+                            exclusive={false}
+                            fluid
+                            inverted
+                            panels={level2Panels}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/1092-applause-outline copy.gif"
+                      alt="Applause outline"
+                      size="tiny"
+                      verticalAlign="middle"
+                      className="service-image"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <List.Header as="h2">
+                            Customer Success Teams:
                           </List.Header>
-                        </a>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Grid.Column>
+                          <Accordion
+                            defaultActiveIndex={[0, 2]}
+                            exclusive={false}
+                            fluid
+                            inverted
+                            panels={level3Panels}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Image
+                      src="/assets/Icons/Gifs/153-bar-chart-growth-outline copy.gif"
+                      alt="Group of people"
+                      size="tiny"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <List celled inverted relaxed>
+                      <List.Item>
+                        <List.Content>
+                          <a id="insight">
+                            <List.Header as="h1">
+                              Insight &amp; Analytics
+                            </List.Header>
+                          </a>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  </Grid.Column>
+                </Grid.Row>
+                <hr style={dividerStyle} />
+                <Image
+                  src="/assets/Icons/Gifs/56-document-outline copy.gif"
+                  alt="Document outline"
+                  size="tiny"
+                  verticalAlign="middle"
+                />
+                <List.Header as="h2">
+                  Custom Reports &amp; Dashboards:
+                </List.Header>
+                <List.Description as="p" className="paragraph-text">
+                  Our experts can help you design and implement custom reports
+                  and dashboards to track and visualize your key business
+                  metrics. By consolidating data and providing real-time
+                  insights, you can make data-driven decisions and improve
+                  business performance.
+                </List.Description>
+                <Image
+                  src="/assets/Icons/Gifs/955-demand-outline.gif"
+                  alt="Demand outline"
+                  size="tiny"
+                  verticalAlign="middle"
+                />
+                <List.Header as="h2">Full Cycle Reporting:</List.Header>
+                <List.Description as="p" className="paragraph-text">
+                  We can help you implement a full cycle reporting system that
+                  tracks your revenue performance from lead generation to
+                  customer retention. By identifying and addressing bottlenecks
+                  and inefficiencies in your revenue cycle, you can optimize
+                  your revenue growth and improve customer satisfaction.
+                </List.Description>
+                <Image
+                  src="/assets/Icons/Gifs/1325-code-fork-outline copy.gif"
+                  alt="Code fork outline"
+                  size="tiny"
+                  verticalAlign="middle"
+                />
+                <List.Header as="h2">Forecasting Revenue:</List.Header>
+                <List.Description as="p" className="paragraph-text">
+                  Our consultants can help you develop a revenue forecasting
+                  model that predicts future revenue growth based on historical
+                  data and market trends. By accurately forecasting revenue, you
+                  can make informed decisions and develop strategies to improve
+                  business performance.
+                </List.Description>
+                <Image
+                  src="/assets/Icons/Gifs/WY_Home-consultation-outline.gif.gif"
+                  alt="Home consultation outline"
+                  size="tiny"
+                  verticalAlign="middle"
+                />
+                <List.Header as="h2">Customer Journey:</List.Header>
+                <List.Description as="p" className="paragraph-text">
+                  Our team can help you map and optimize your customer journey,
+                  from initial contact to post-sale engagement. By understanding
+                  your customer's needs and pain points, you can provide a
+                  seamless and personalized experience that improves customer
+                  satisfaction and drives revenue growth.
+                </List.Description>
               </Grid.Row>
-              <hr style={dividerStyle} />
-                        <Image
-                          src="/assets/Icons/Gifs/56-document-outline copy.gif"
-                          alt="Document outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
-                        <List.Header as="h2">
-                          Custom Reports &amp; Dashboards:
-                        </List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Our experts can help you design and implement custom
-                          reports and dashboards to track and visualize your key
-                          business metrics. By consolidating data and providing
-                          real-time insights, you can make data-driven decisions
-                          and improve business performance.
-                        </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/955-demand-outline.gif"
-                          alt="Demand outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
-                        <List.Header as="h2">Full Cycle Reporting:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          We can help you implement a full cycle reporting
-                          system that tracks your revenue performance from lead
-                          generation to customer retention. By identifying and
-                          addressing bottlenecks and inefficiencies in your
-                          revenue cycle, you can optimize your revenue growth
-                          and improve customer satisfaction.
-                        </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/1325-code-fork-outline copy.gif"
-                          alt="Code fork outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
-                        <List.Header as="h2">Forecasting Revenue:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Our consultants can help you develop a revenue
-                          forecasting model that predicts future revenue growth
-                          based on historical data and market trends. By
-                          accurately forecasting revenue, you can make informed
-                          decisions and develop strategies to improve business
-                          performance.
-                        </List.Description>
-                        <Image
-                          src="/assets/Icons/Gifs/WY_Home-consultation-outline.gif.gif"
-                          alt="Home consultation outline"
-                          size="tiny"
-                          verticalAlign="middle"
-                        />
-                        <List.Header as="h2">Customer Journey:</List.Header>
-                        <List.Description as="p" className="paragraph-text">
-                          Our team can help you map and optimize your customer
-                          journey, from initial contact to post-sale engagement.
-                          By understanding your customer's needs and pain
-                          points, you can provide a seamless and personalized
-                          experience that improves customer satisfaction and
-                          drives revenue growth.
-                        </List.Description>
-            </Grid.Row>
             </Grid>
-            </Container>
-
-
-
+          </Container>
         </Suspense>
         <Grid centered stackable inverted>
           <Container>
