@@ -197,17 +197,23 @@ export default class Services extends Component {
             </Header>
             <Grid stackable inverted>
               <Grid.Row>
-                <Image
-                  src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
-                  alt="Data server"
-                  size="medium"
-                />
-                <a id="data" style={{ display: "flex", alignItems: "center", color: "var(--secondary-color-yellow)", fontSize: "5em !important" }}>
-                  <h1>Data / CRM</h1>
-                </a>
+                <Grid.Column>
+                  <Header>
+                    <Image
+                      src="/assets/Icons/Website_LordIcons/WY_DATA-server-outline.gif"
+                      alt="Data server"
+                      size="large"
+                    />
+                    <Header.Content>
+                      <a id="data" style={{ display: "flex", alignItems: "center", color: "var(--secondary-color-yellow)", fontSize: "5em !important" }}>
+                        <h1>Data / CRM</h1>
+                      </a>
+                    </Header.Content>
+                  </Header>
+                </Grid.Column>
+                <hr style={dividerStyle} />
               </Grid.Row>
               <Grid.Row>
-                <hr style={dividerStyle} />
                 <Grid.Row columns={2}>
                   <Grid.Column>
                     <Image

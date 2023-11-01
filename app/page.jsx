@@ -179,8 +179,8 @@ export default class Home extends Component {
               <Grid.Column>
                 <Container className="main-embed">
                   <iframe
-                    width="560"
-                    height="315"
+                    width="873"
+                    height="491"
                     src="https://www.youtube.com/embed/cxmrVD45aR4"
                     title="BizBolt Consulting"
                     frameborder="0"
